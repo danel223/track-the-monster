@@ -72,37 +72,27 @@ h1{font-family:"Alegreya SC",Georgia,serif;font-weight:800;font-size:clamp(2.2re
 .notes .k{color:var(--moss);font-family:"Alegreya SC",Georgia,serif;font-weight:500}
 .notes.image-round{border-top:1px solid var(--line);border-radius:18px;padding-top:1.25rem}
 .notes li.image-clue{grid-template-columns:1fr;gap:.5rem}
-.silhouette-frame{display:grid;place-items:center;min-height:13rem;padding:.5rem;
-  overflow:hidden;border:1px solid var(--line);border-radius:12px;background:#fff}
-.monster-silhouette{display:block;width:min(100%,38rem);height:clamp(13rem,58vw,25rem);object-fit:contain}
-.answer-art{margin:0 0 1rem;padding:.75rem;background:var(--surface);border:1px solid var(--line);border-radius:14px;text-align:center}
-.answer-art img{display:block;width:100%;height:clamp(14rem,56vw,26rem);object-fit:contain;border-radius:9px}
-.answer-art figcaption{margin-top:.35rem;color:var(--muted);font-family:"Alegreya SC",Georgia,serif}
-.answer-art[hidden]{display:none}
-.sw{display:flex;flex-wrap:wrap;gap:.9rem}
+.sw{display:flex;flex-wrap:wrap;gap:.9rem;margin-top:.25rem}
 .chip{display:flex;flex-direction:column;align-items:center;gap:.25rem}
-.chip i{display:block;width:4rem;height:2.5rem;border-radius:8px;border:1px solid var(--line);box-shadow:inset 0 0 0 1px rgba(0,0,0,.28)}
+.chip i{display:block;width:3.5rem;height:2rem;border-radius:6px;border:1px solid var(--line);box-shadow:inset 0 0 0 1px rgba(0,0,0,.28)}
 .chip small{font-size:.85rem;color:var(--muted)}
 .setup{background:var(--surface);border:1px solid var(--line);border-radius:18px;padding:1.25rem}
-.setup h2{font-family:"Alegreya SC",Georgia,serif;font-weight:800;font-size:1.5rem;margin:0 0 .25rem}
+.setup h2{font-family:"Alegreya SC",Georgia,serif;font-weight:800;font-size:1.5rem;margin:1rem 0 .25rem}
+.setup h2:first-of-type{margin-top:0}
 .setup > p{margin:0 0 1rem;color:var(--muted)}
 .gens{display:grid;grid-template-columns:repeat(auto-fill,minmax(14rem,1fr));gap:.6rem;margin-bottom:1.1rem}
 .gen{display:flex;gap:.65rem;align-items:flex-start;padding:.7rem .85rem;border:1px solid var(--line);border-radius:10px;cursor:pointer;background:var(--bg)}
 .gen:has(input:checked){border-color:var(--amber);box-shadow:inset 0 0 0 1px var(--amber)}
-.gen:has(input:focus-visible){outline:3px solid var(--amber);outline-offset:2px}
 .gen input{accent-color:var(--amber);width:1.1rem;height:1.1rem;margin-top:.3rem;flex:none}
 .gen b{font-family:"Alegreya SC",Georgia,serif;font-weight:800;display:block}
 .gen small{color:var(--muted);font-size:.9rem;line-height:1.35;display:block}
-.row{display:flex;gap:.75rem;flex-wrap:wrap;align-items:center}
-.row .reveal{margin-top:0}
+.row{display:flex;gap:.75rem;flex-wrap:wrap;align-items:center;margin-top:1rem}
 .note{color:var(--muted);font-size:1rem}
 .go:disabled{opacity:.45;cursor:default}
-.end .row{justify-content:center}
 @keyframes ink{from{opacity:0;transform:translateY(4px)}}
 .reveal{margin-top:.75rem;background:none;border:1px solid var(--line);color:var(--ink);
   font:inherit;font-size:1rem;padding:.5rem .9rem;border-radius:999px;cursor:pointer}
 .reveal:hover{border-color:var(--moss)}
-.reveal:disabled{opacity:.45;cursor:default}
 
 .choices{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:.6rem;margin:1.25rem 0}
 .choice{font-family:"Alegreya SC",Georgia,serif;font-weight:500;font-size:1.1rem;text-align:left;
@@ -110,290 +100,118 @@ h1{font-family:"Alegreya SC",Georgia,serif;font-weight:800;font-size:clamp(2.2re
   color:var(--ink);cursor:pointer;transition:border-color .15s}
 .choice:hover:not(:disabled){border-color:var(--amber)}
 .choice:disabled{cursor:default}
-.choice.right{border-color:var(--good);box-shadow:inset 0 0 0 2px var(--good)}
-.choice.wrong{border-color:var(--rust);box-shadow:inset 0 0 0 2px var(--rust);text-decoration:line-through}
-.typed{grid-column:1/-1;display:flex;flex-direction:column;gap:.6rem}
-.typed label{color:var(--muted);font-size:1rem}
-.trow{display:flex;gap:.6rem;flex-wrap:wrap}
-.trow input{flex:1 1 14rem;min-width:0;font:inherit;font-size:1.1rem;padding:.75rem 1rem;border-radius:10px;
-  border:1px solid var(--line);background:var(--surface);color:var(--ink)}
-.trow input:focus-visible{outline:3px solid var(--amber);outline-offset:2px}
-.trow input.right{border-color:var(--good);box-shadow:inset 0 0 0 2px var(--good)}
-.trow input.wrong{border-color:var(--rust);box-shadow:inset 0 0 0 2px var(--rust)}
-.typed .reveal{align-self:flex-start;margin-top:0}
-.reveal[hidden]{display:none}
-.el{display:flex;align-items:center;gap:.5rem}
-.eicon{flex:none}
-.guide{background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:1rem 1.25rem;margin:0 0 1rem}
-.guide h3{font-family:"Alegreya SC",Georgia,serif;font-weight:800;font-size:1.3rem;margin:0 0 .5rem}
-.guide dl{display:grid;grid-template-columns:7rem 1fr;gap:.35rem .75rem;margin:0 0 .75rem}
-.guide dt{color:var(--moss);font-family:"Alegreya SC",Georgia,serif}
-.guide dd{margin:0}
-.guide ul{margin:.25rem 0 0;padding-left:1.1rem}
-.guide li{margin:.15rem 0}
-@media (max-width:480px){ .guide dl{grid-template-columns:1fr} }
-#deepPick{margin:0 0 1.1rem}
+.choice.right{border-color:var(--good);box-shadow:inset 0 0 0 2px var(--good);background:rgba(47,107,62,0.1)}
+.choice.wrong{border-color:var(--rust);box-shadow:inset 0 0 0 2px var(--rust);text-decoration:line-through;background:rgba(155,59,42,0.1)}
 .settings{display:grid;grid-template-columns:repeat(auto-fill,minmax(14rem,1fr));gap:.6rem;margin-bottom:.5rem}
 .settings label{display:flex;flex-direction:column;gap:.3rem;font-family:"Alegreya SC",Georgia,serif}
-.settings select,#reportNote{font:inherit;font-size:1rem;padding:.5rem .6rem;border-radius:8px;border:1px solid var(--line);background:var(--bg);color:var(--ink)}
-#reportNote{width:100%}
-#reportBox{margin:0 0 1rem}
-.sharebox{width:100%;font:inherit;font-size:.95rem;padding:.6rem;border-radius:8px;border:1px solid var(--line);background:var(--surface);color:var(--ink);margin-top:.75rem}
-.stat-table{width:100%;border-collapse:collapse;margin:.25rem 0 1rem}
-.stat-table th,.stat-table td{text-align:left;padding:.3rem .4rem;border-bottom:1px dashed var(--line)}
-.stat-table td.n{text-align:right;font-variant-numeric:tabular-nums}
-.report-item{padding:.5rem 0;border-bottom:1px dashed var(--line);font-size:1rem}
-#panel h3{font-family:"Alegreya SC",Georgia,serif;margin:1rem 0 .25rem}
-.keys{margin-top:1rem}
-@media (hover:none){ .keys{display:none} }
-.verdict{min-height:1.6em;margin:.25rem 0 1rem}
+.settings select{font:inherit;font-size:1rem;padding:.5rem .6rem;border-radius:8px;border:1px solid var(--line);background:var(--bg);color:var(--ink)}
+.verdict{min-height:1.6em;margin:.25rem 0 1rem;font-weight:600}
 .verdict.good{color:var(--good)} .verdict.bad{color:var(--rust)}
 .go{font-family:"Alegreya SC",Georgia,serif;font-weight:800;font-size:1.15rem;
   background:var(--amber);color:var(--amber-ink);border:none;border-radius:10px;
   padding:.8rem 1.4rem;cursor:pointer}
 .go[hidden]{display:none}
-button:focus-visible,select:focus-visible,textarea:focus-visible,.gen:has(input:focus-visible){outline:3px solid var(--amber);outline-offset:2px}
-.choice:focus-visible{outline:3px solid var(--amber);outline-offset:3px;border-color:var(--amber)}
-.sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}
-.ach{display:flex;gap:.6rem;align-items:baseline;padding:.35rem 0;border-bottom:1px dashed var(--line)}
-.ach b{font-family:"Alegreya SC",Georgia,serif}
-.ach.locked{opacity:.55}
-.help h3{margin-top:1rem}
-.help p{margin:.25rem 0 .5rem}
 .end{text-align:center;padding:2rem 0}
 .end .big{font-family:"Alegreya SC",Georgia,serif;font-weight:800;font-size:4rem;line-height:1;margin:.5rem 0}
-.end p{color:var(--muted)}
 footer{margin-top:2.5rem;color:var(--muted);font-size:.9rem}
 @media (max-width:480px){
   .choices{grid-template-columns:1fr}
   .notes li{grid-template-columns:1fr;gap:0}
-}
-html.calm *,html.calm *::before,html.calm *::after{animation:none!important;transition:none!important}
-.lb-tabs{display:flex;flex-wrap:wrap;gap:.4rem;margin:.25rem 0 .75rem}
-.lb-tabs button[aria-pressed="true"]{border-color:var(--amber);box-shadow:inset 0 0 0 1px var(--amber)}
-.mistake{padding:.6rem 0;border-bottom:1px dashed var(--line)}
-.mistake b{font-family:"Alegreya SC",Georgia,serif}
-.mistake p{margin:.2rem 0}
-@media (prefers-reduced-motion:reduce){
-  *,*::before,*::after{animation:none!important;transition:none!important}
 }
 </style>
 </head>
 <body>
 <main>
   <h1>Track the Monster</h1>
-  <p class="sub">Track monsters from field notes and colours, then name their generation, type and maps. Fewer clues, more points.</p>
+  <p class="sub">Track monsters from field notes and colours, then name their generation and type. Fewer clues, more points.</p>
 
   <section class="setup" id="setup">
     <h2>Choose your generations</h2>
     <p>Pick one, several or all, then choose a mode and question types.</p>
     <div class="gens" id="gens"></div>
-    <p class="note">Full-color images appear only after correct answers about sixth-generation monsters.</p>
+    
     <h2>Choose a mode</h2>
     <div class="gens" id="modes">
-      <label class="gen"><input type="radio" name="mode" value="std" checked><span><b>Standard</b><small>A set of up to 20 questions.</small></span></label>
+      <label class="gen"><input type="radio" name="mode" value="std" checked><span><b>Standard</b><small>A set of up to 10 questions.</small></span></label>
       <label class="gen"><input type="radio" name="mode" value="endless"><span><b>Endless</b><small>Questions keep coming until you lose all 3 lives.</small></span></label>
-      <label class="gen"><input type="radio" name="mode" value="sudden"><span><b>Sudden death</b><small>One life. Questions get harder the longer you last.</small></span></label>
-      <label class="gen"><input type="radio" name="mode" value="time"><span><b>Time attack</b><small>60 seconds of quick questions. Right answers add 2 seconds, wrong ones cost 3.</small></span></label>
-      <label class="gen"><input type="radio" name="mode" value="daily"><span><b>Daily hunt</b><small>The same 10 questions for everyone today, from every generation and question type.</small></span></label>
-      <label class="gen"><input type="radio" name="mode" value="deep"><span><b>Deep dive</b><small>10 questions all about one monster.</small></span></label>
-      <label class="gen"><input type="radio" name="mode" value="practice"><span><b>Practice</b><small>No score or lives. See the monster's full field guide after every answer.</small></span></label>
     </div>
-    <div id="deepPick" class="typed" hidden>
-      <label for="deepName">Which monster? Leave it blank for a random one from your generations.</label>
-      <div class="trow"><input id="deepName" type="text" list="monsterList" autocomplete="off" spellcheck="false" placeholder="For example: Rathalos"></div>
-      <datalist id="monsterList"></datalist>
-    </div>
-    <div id="weakPick" hidden>
-      <label class="gen"><input type="checkbox" id="weakOnly"><span><b>Focus on my weakest monsters</b><small>Uses your stats to serve the monsters you miss most.</small></span></label>
-    </div>
+
     <h2>Question types</h2>
     <div class="gens" id="qtypes"></div>
+
     <h2>Difficulty</h2>
     <div class="settings">
-      <label>Typed answers
-        <select id="setTyped"><option value="0">Never</option><option value="0.34" selected>Sometimes (1 in 3)</option><option value="0.67">Often (2 in 3)</option><option value="1">Always</option></select></label>
-      <label>Wrong choices
-        <select id="setDecoy"><option value="tricky" selected>Tricky (often the same type)</option><option value="mixed">Mixed</option></select></label>
       <label>Tracking hunts start with
         <select id="setClues"><option value="1" selected>1 clue</option><option value="2">2 clues</option><option value="3">3 clues</option></select></label>
-      <label>Sound
-        <select id="setSound"><option value="off" selected>Off</option><option value="on">On</option></select></label>
-      <label>Motion
-        <select id="setMotion"><option value="full" selected>Full</option><option value="reduced">Reduced</option></select></label>
     </div>
-    <p class="note">The Daily hunt always uses the standard settings, so everyone plays the same game.</p>
+
     <div class="row">
       <button class="go" id="startBtn">Start hunting</button>
-      <button class="reveal" id="allBtn">Select all</button>
-      <button class="reveal" id="helpBtn">How to play</button>
-      <button class="reveal" id="statsBtn">Stats</button>
-      <button class="reveal" id="reportsBtn">Reports</button>
-      <button class="reveal" id="lbBtn">Leaderboard</button>
-      <button class="reveal" id="saveBtn">Move my progress</button>
-      <span class="note" id="poolNote"></span>
     </div>
   </section>
 
   <div id="game" hidden>
     <div class="bar">
-      <span>Question <b id="round">1</b><span id="ofTotal"> of <b id="total">20</b></span></span>
+      <span>Question <b id="round">1</b><span id="ofTotal"> of <b id="total">10</b></span></span>
       <span id="livesWrap" hidden>Lives <b id="lives">3</b></span>
-      <span id="timeWrap" hidden>Time <b id="time">60</b></span>
       <span id="scoreWrap">Score <b id="score">0</b></span>
-      <span id="bestWrap">Best <b id="best">0</b></span>
     </div>
 
-    <section class="shroud" id="shroud" aria-live="polite">
+    <section class="shroud" id="shroud">
       <div class="track">
         <svg viewBox="0 0 120 120" aria-hidden="true">
           <circle class="ring-bg" cx="60" cy="60" r="52"/>
           <circle class="ring" id="ring" cx="60" cy="60" r="52"/>
           <text class="mark" id="mark" x="60" y="75" text-anchor="middle">?</text>
         </svg>
-        <p id="trackText">Tracking</p>
+        <p id="trackText">Tracking Monster...</p>
       </div>
     </section>
 
     <section class="notes" id="notes">
       <ol id="clues"></ol>
-      <button class="reveal" id="reveal">Reveal another clue (−1 point)</button>
+      <button class="reveal" id="reveal">Reveal another clue (-1 pt)</button>
     </section>
 
     <div class="choices" id="choices"></div>
     <p class="verdict" id="verdict"></p>
-    <figure class="answer-art" id="answerArt" hidden>
-      <img id="answerArtImage" alt="">
-      <figcaption id="answerArtCaption"></figcaption>
-    </figure>
-    <p class="sr-only" id="announce" aria-live="assertive" aria-atomic="true"></p>
-    <section class="guide" id="guide" hidden></section>
-    <div id="reportBox" hidden>
-      <button class="reveal" id="reportBtn">Report this question</button>
-      <div id="reportForm" class="typed" hidden>
-        <label for="reportNote">What looks wrong? (optional)</label>
-        <textarea id="reportNote" rows="2"></textarea>
-        <div class="row"><button class="go" id="reportSave">Save report</button></div>
-      </div>
-      <p class="note" id="reportDone" hidden>Saved. You can find it under Reports on the menu.</p>
-    </div>
-    <p class="note keys">Keys: 1 to 4 pick a choice, R reveals a clue, N moves on.</p>
+
     <div class="row">
       <button class="go" id="next" hidden>Next question</button>
-      <button class="reveal" id="endRun" hidden>End run</button>
       <button class="reveal" id="toMenu">Return to menu</button>
     </div>
   </div>
 
   <div class="end" id="end" hidden>
-    <p id="endTitle">Set complete</p>
+    <h2>Hunt Complete</h2>
     <div class="big" id="final">0</div>
-    <p id="endNote"></p>
-    <div class="row">
-      <button class="go" id="again">Start a new set</button>
+    <p id="endNote">Final Score</p>
+    <div class="row" style="justify-content:center">
+      <button class="go" id="again">Play Again</button>
       <button class="reveal" id="change">Back to menu</button>
-      <button class="reveal" id="shareBtn" hidden>Copy result</button>
-      <button class="reveal" id="mistakesBtn" hidden>Review mistakes</button>
     </div>
-    <textarea id="shareText" class="sharebox" rows="3" readonly hidden></textarea>
   </div>
-
-  <section class="setup" id="panel" hidden>
-    <h2 id="panelTitle"></h2>
-    <div id="panelBody"></div>
-    <textarea id="panelText" class="sharebox" rows="6" readonly hidden></textarea>
-    <div class="row" id="panelActions"></div>
-  </section>
 
   <footer>A fan quiz. Monster Hunter and its monsters belong to Capcom.</footer>
 </main>
 
 <script>
 const MONSTERS = [
- {n:"Rathalos",c:"Flying Wyvern",e:"Fire",d:"Monster Hunter (2004)",t:[
-  "Hunters know it as the King of the Skies.",
-  "Its talons carry poison.",
-  "Its mate is called the Queen of the Land."]},
- {n:"Rathian",c:"Flying Wyvern",e:"Fire",d:"Monster Hunter (2004)",t:[
-  "Hunters know it as the Queen of the Land.",
-  "It favours a backflip with a poisoned tail.",
-  "It spends more time on the ground than its mate."]},
- {n:"Tigrex",c:"Flying Wyvern",e:"None",d:"Monster Hunter Freedom 2 (2007)",t:[
-  "Its roar is strong enough to hurt hunters standing close.",
-  "It charges on its forelimbs like a primitive wyvern.",
-  "It was the flagship of the second portable game."]},
- {n:"Nargacuga",c:"Flying Wyvern",e:"None",d:"Monster Hunter Freedom Unite (2008)",t:[
-  "It stalks the forest like a panther in the dark.",
-  "It can fire spikes from its tail.",
-  "Its eyes trail red streaks of light when it is enraged."]},
- {n:"Zinogre",c:"Fanged Wyvern",e:"Thunder",d:"Monster Hunter Portable 3rd (2010)",t:[
-  "It charges itself with help from swarms of insects.",
-  "Hunters call it the Thunder Wolf Wyvern.",
-  "It howls at the sky to build power before a fight."]},
- {n:"Diablos",c:"Flying Wyvern",e:"None",d:"Monster Hunter (2004)",t:[
-  "Despite its fearsome horns, it eats cacti.",
-  "It burrows beneath the desert sand.",
-  "A loud noise can stun it while it is underground."]},
- {n:"Rajang",c:"Fanged Beast",e:"Thunder",d:"Monster Hunter 2 (2006)",t:[
-  "Its fur turns gold when it is enraged.",
-  "It fires a beam of lightning from its mouth.",
-  "It has been seen hunting Kirin."]},
- {n:"Kushala Daora",c:"Elder Dragon",e:"Wind",d:"Monster Hunter 2 (2006)",t:[
-  "Its hide is metal, and it sheds it when it rusts.",
-  "It wraps itself in a barrier of wind.",
-  "Hunters call it the Steel Dragon."]},
- {n:"Lagiacrus",c:"Leviathan",e:"Thunder",d:"Monster Hunter Tri (2009)",t:[
-  "It rules the seas of its home region.",
-  "You can fight it on land and underwater.",
-  "The spines on its back store electricity."]},
- {n:"Nergigante",c:"Elder Dragon",e:"None",d:"Monster Hunter: World (2018)",t:[
-  "It feeds on other Elder Dragons.",
-  "Its spikes regrow and harden over time.",
-  "It dives at its target from a great height."]},
- {n:"Gore Magala",c:"Demi Elder",e:"Frenzy virus",d:"Monster Hunter 4 (2013)",t:[
-  "It has no eyes and senses prey through the scales it scatters.",
-  "Its scales spread a virus that drives monsters into a frenzy.",
-  "It later molts into a shining adult form."]},
- {n:"Anjanath",c:"Brute Wyvern",e:"Fire",d:"Monster Hunter: World (2018)",t:[
-  "It extends a large nasal membrane when it gets angry.",
-  "It roams the Ancient Forest looking for a fight.",
-  "It can breathe fire once its rage builds."]},
- {n:"Magnamalo",c:"Fanged Wyvern",e:"Hellfire",d:"Monster Hunter Rise (2021)",t:[
-  "It produces a ghostly purple flame.",
-  "Its look draws on armoured samurai.",
-  "It was the flagship of its debut game."]},
- {n:"Malzeno",c:"Elder Dragon",e:"Dragon",d:"Monster Hunter Rise: Sunbreak (2022)",t:[
-  "It drains the life force of its prey.",
-  "Its design takes inspiration from vampire legends.",
-  "Tiny parasitic creatures called Qurio live in its body."]},
- {n:"Yian Kut-Ku",c:"Bird Wyvern",e:"Fire",d:"Monster Hunter (2004)",t:[
-  "Its huge ears fan out when it is startled.",
-  "It spits small fireballs.",
-  "For many hunters it is one of the first big challenges."]},
- {n:"Fatalis",c:"Elder Dragon",e:"Fire",d:"Monster Hunter (2004)",t:[
-  "Legend says it destroyed a castle and its kingdom.",
-  "Hunters call it the Black Dragon.",
-  "It returned as the final challenge of a 2018 game's expansion."]},
- {n:"Great Jagras",c:"Fanged Wyvern",e:"None",d:"Monster Hunter: World (2018)",t:[
-  "It can swallow prey whole and swell up.",
-  "It leads a pack of smaller raptors.",
-  "It is often the first large monster in its debut game."]},
- {n:"Odogaron",c:"Fanged Wyvern",e:"None",d:"Monster Hunter: World (2018)",t:[
-  "Its claws leave wounds that bleed.",
-  "It hunts in the Rotten Vale.",
-  "It is known for relentless speed."]},
- {n:"Barroth",c:"Brute Wyvern",e:"None",d:"Monster Hunter Tri (2009)",t:[
-  "It coats itself in mud.",
-  "It charges with a hard, crown-like head.",
-  "It shakes off mud that can slow hunters down."]},
- {n:"Brachydios",c:"Brute Wyvern",e:"Blast",d:"Monster Hunter 3 Ultimate (2011)",t:[
-  "Its fists are coated in explosive slime.",
-  "It licks its arms to refresh the slime.",
-  "It slams the ground with its fists to set off blasts."]},
- {n:"Mizutsune",c:"Leviathan",e:"Water",d:"Monster Hunter Generations (2015)",t:[
-  "It produces bubbles from its fur.",
-  "Hunters often compare it to a fox.",
-  "Its bubbles can leave hunters slipping and sliding."]}
+ {n:"Rathalos",c:"Flying Wyvern",e:"Fire",d:"1st Generation",t:["Hunters know it as the King of the Skies.","Its talons carry poison.","Its mate is called the Queen of the Land."]},
+ {n:"Rathian",c:"Flying Wyvern",e:"Fire",d:"1st Generation",t:["Hunters know it as the Queen of the Land.","It favours a backflip with a poisoned tail.","It spends more time on the ground than its mate."]},
+ {n:"Tigrex",c:"Flying Wyvern",e:"None",d:"2nd Generation",t:["Its roar is strong enough to hurt hunters standing close.","It charges on its forelimbs like a primitive wyvern.","It was the flagship of Freedom 2."]},
+ {n:"Nargacuga",c:"Flying Wyvern",e:"None",d:"2nd Generation",t:["It stalks the forest like a panther in the dark.","It can fire spikes from its tail.","Its eyes trail red streaks of light when enraged."]},
+ {n:"Zinogre",c:"Fanged Wyvern",e:"Thunder",d:"3rd Generation",t:["It charges itself with help from swarms of insects.","Hunters call it the Thunder Wolf Wyvern.","It howls at the sky to build power."]},
+ {n:"Diablos",c:"Flying Wyvern",e:"None",d:"1st Generation",t:["Despite its fearsome horns, it eats cacti.","It burrows beneath the desert sand.","A loud noise can stun it underground."]},
+ {n:"Rajang",c:"Fanged Beast",e:"Thunder",d:"2nd Generation",t:["Its fur turns gold when it is enraged.","It fires a beam of lightning from its mouth.","It has been seen hunting Kirin."]},
+ {n:"Lagiacrus",c:"Leviathan",e:"Thunder",d:"3rd Generation",t:["It rules the seas of its home region.","You can fight it on land and underwater.","The spines on its back store electricity."]},
+ {n:"Nergigante",c:"Elder Dragon",e:"None",d:"5th Generation",t:["It feeds on other Elder Dragons.","Its spikes regrow and harden over time.","It dives at its target from a great height."]},
+ {n:"Gore Magala",c:"Demi Elder",e:"Frenzy virus",d:"4th Generation",t:["It senses prey through scales it scatters.","Its scales spread a virus that drives monsters into a frenzy.","It later molts into a shining adult form."]},
+ {n:"Anjanath",c:"Brute Wyvern",e:"Fire",d:"5th Generation",t:["It extends a large nasal membrane when angry.","It roams the Ancient Forest looking for a fight.","It breathes fire once its rage builds."]},
+ {n:"Magnamalo",c:"Fanged Wyvern",e:"Hellfire",d:"5th Generation",t:["It produces a ghostly purple flame.","Its look draws on armoured samurai.","It was the flagship of Monster Hunter Rise."]},
+ {n:"Malzeno",c:"Elder Dragon",e:"Dragon",d:"5th Generation",t:["It drains the life force of its prey.","Its design takes inspiration from vampire legends.","Tiny parasitic creatures called Qurio live in its body."]},
+ {n:"Ajarakan",c:"Fanged Beast",e:"Fire",d:"6th Generation",t:["It slams the ground with burning fists.","It fights turf wars in the Oilwell Basin.","Its body heats up as it fights."]},
+ {n:"Balahara",c:"Leviathan",e:"Water",d:"6th Generation",t:["It swims through sand using its fins.","It looks like a giant sandworm.","It lives in the Windward Plains."]}
 ];
 
 const PAL = {
@@ -404,608 +222,33 @@ const PAL = {
  "Zinogre":[["#2F5D6E","Teal blue"],["#E2C043","Yellow"],["#E9E6DD","White"]],
  "Diablos":[["#C9A877","Sandy tan"],["#5A4630","Dark brown"],["#E6DAC0","Bone"]],
  "Rajang":[["#232224","Black"],["#D9A836","Gold"],["#7A7672","Ash grey"]],
- "Kushala Daora":[["#8C9196","Steel grey"],["#4A4E52","Gunmetal"],["#8A5A3A","Rust"]],
  "Lagiacrus":[["#2E4E8A","Deep blue"],["#E6E1CC","Pale cream"],["#3F7E8A","Teal"]],
  "Nergigante":[["#3A3A40","Dark grey"],["#1C1C20","Black"],["#E5E2DA","Bone white"]],
  "Gore Magala":[["#1C1A1F","Black"],["#5B3A6E","Purple"],["#6E6A72","Grey"]],
  "Anjanath":[["#D49A86","Salmon pink"],["#8A6A4A","Brown"],["#E3D2B4","Cream"]],
  "Magnamalo":[["#4A2E5E","Dark purple"],["#2E2E36","Gunmetal"],["#C26BD6","Violet"]],
  "Malzeno":[["#D8D8DE","Silver white"],["#A0202E","Crimson"],["#3A3A42","Dark grey"]],
- "Yian Kut-Ku":[["#D88A8E","Pink"],["#EADFCF","Cream"],["#6E7280","Slate grey"]],
- "Fatalis":[["#151417","Black"],["#C2361F","Red"],["#9A938A","Pale grey"]],
- "Great Jagras":[["#E0B83A","Yellow"],["#5E6A9A","Slate blue"],["#E6DCC6","Cream"]],
- "Odogaron":[["#8A2A2A","Red"],["#1F1A1A","Black"],["#A8A29A","Pale grey"]],
- "Barroth":[["#7A5A3A","Brown"],["#C49A5A","Ochre"],["#DCCBAA","Beige"]],
- "Brachydios":[["#1F2433","Navy black"],["#7FD63A","Bright green"],["#3A4A6A","Dark blue"]],
- "Mizutsune":[["#EDE9E2","White"],["#D9A3C8","Lilac pink"],["#8FCFD6","Aqua"]]
+ "Ajarakan":[["#1A1A1A","Black"],["#E0702A","Orange"],["#A0302A","Red"]],
+ "Balahara":[["#CDB27E","Sand"],["#5E7A9A","Dusty blue"],["#8A6A4A","Brown"]]
 };
 
-const MORE = [
- {n:"Gravios",c:"Flying Wyvern",e:"Fire",d:"Monster Hunter (2004)",p:[["#8A8580","Grey"],["#C0452A","Red"],["#3A3836","Charcoal"]],t:[
-  "Its rock-hard shell can make blades bounce off.",
-  "It fires a beam of superheated gas.",
-  "Its young are known as Basarios."]},
- {n:"Khezu",c:"Flying Wyvern",e:"Thunder",d:"Monster Hunter (2004)",p:[["#E8E2DC","Pale white"],["#D9A8A0","Flesh pink"],["#8C8A88","Grey"]],t:[
-  "It has no eyes and hunts by smell.",
-  "It can stretch its neck far further than it looks.",
-  "It clings to cave ceilings."]},
- {n:"Monoblos",c:"Flying Wyvern",e:"None",d:"Monster Hunter (2004)",p:[["#D8C7A0","Pale sand"],["#EDE6D6","Bone white"],["#6E5638","Brown"]],t:[
-  "It has a single great horn on its head.",
-  "It is a close relative of a two-horned desert wyvern.",
-  "It eats only plants, yet defends its territory fiercely."]},
- {n:"Kirin",c:"Elder Dragon",e:"Thunder",d:"Monster Hunter (2004)",p:[["#F0EEEA","White"],["#7E9CBC","Silver blue"],["#CFE3EE","Pale blue"]],t:[
-  "It looks more like a horse than a dragon.",
-  "It calls down bolts of lightning.",
-  "Its single horn is its most prized part."]},
- {n:"Gypceros",c:"Bird Wyvern",e:"Poison",d:"Monster Hunter (2004)",p:[["#6E4E86","Purple"],["#5E6E8A","Slate blue"],["#E2D6BE","Cream"]],t:[
-  "It fakes its own death.",
-  "Its crest gives off a blinding flash.",
-  "Its rubbery hide shrugs off thunder."]},
- {n:"Plesioth",c:"Piscine Wyvern",e:"Water",d:"Monster Hunter (2004)",p:[["#1F2E5A","Navy"],["#E07A2A","Orange"],["#3E7A7A","Teal"]],t:[
-  "Hunters joke about a hip check that seems to reach far beyond its body.",
-  "It fires jets of pressurised water.",
-  "It swims in lakes and leaps out onto land."]},
- {n:"Lao-Shan Lung",c:"Elder Dragon",e:"None",d:"Monster Hunter (2004)",p:[["#7A3E2E","Red brown"],["#3E3A38","Dark grey"],["#B49A72","Tan"]],t:[
-  "Hunters fight it from a fortress as it marches past.",
-  "It walks on all fours like a giant lizard.",
-  "A darker, ashen subspecies also exists."]},
- {n:"Teostra",c:"Elder Dragon",e:"Fire",d:"Monster Hunter 2 (2006)",p:[["#C2451E","Red orange"],["#D9A836","Gold"],["#4A2E1E","Dark brown"]],t:[
-  "It scatters an explosive powder around its body.",
-  "Its face and mane recall a lion.",
-  "It can unleash a huge explosion called Supernova."]},
- {n:"Chameleos",c:"Elder Dragon",e:"Poison",d:"Monster Hunter 2 (2006)",p:[["#6E4A8A","Violet"],["#B9A0CF","Lilac"],["#6E7462","Grey green"]],t:[
-  "It can turn invisible.",
-  "It steals items from hunters with its long tongue.",
-  "It sprays a poisonous mist."]},
- {n:"Lunastra",c:"Elder Dragon",e:"Fire",d:"Monster Hunter 2 (2006)",p:[["#3A5AA0","Blue"],["#A8C4E6","Pale blue"],["#C8CCD2","Silver"]],t:[
-  "Its mate is a fiery, lion-like Elder Dragon.",
-  "Its flames burn blue.",
-  "It surrounds itself with a scorching aura."]},
- {n:"Ukanlos",c:"Flying Wyvern",e:"Ice",d:"Monster Hunter Freedom Unite (2008)",p:[["#ECEAE6","White"],["#9EC8DE","Pale blue"],["#5E646A","Slate grey"]],t:[
-  "It ploughs through snow and ice with its shovel-like jaw.",
-  "It lives in a frozen region called the Polar Field.",
-  "Its icy breath freezes the ground."]},
- {n:"Deviljho",c:"Brute Wyvern",e:"Dragon",d:"Monster Hunter Tri (2009)",p:[["#5A6A3A","Olive green"],["#A0202A","Crimson"],["#2E2E2E","Dark grey"]],t:[
-  "It is always hungry and wanders between regions.",
-  "Its body runs so hot that it must keep eating.",
-  "It can lift other monsters in its jaws."]},
- {n:"Qurupeco",c:"Bird Wyvern",e:"Fire",d:"Monster Hunter Tri (2009)",p:[["#B02A2A","Crimson"],["#4E8A4A","Green"],["#E0C040","Yellow"]],t:[
-  "It mimics the calls of other monsters to summon them.",
-  "It strikes parts of its wings together to make sparks.",
-  "Its throat sac inflates as it sings."]},
- {n:"Jhen Mohran",c:"Elder Dragon",e:"None",d:"Monster Hunter Tri (2009)",p:[["#C9B08A","Sand beige"],["#6A4E34","Brown"],["#E8DCC0","Cream"]],t:[
-  "Hunters fight it from a sand ship.",
-  "It swims through the desert like a whale.",
-  "Hunters can mine ore from its back."]},
- {n:"Alatreon",c:"Elder Dragon",e:"Several",d:"Monster Hunter Tri (2009)",p:[["#18171B","Black"],["#7FB6E0","Pale blue"],["#C2361F","Red"]],t:[
-  "It commands several elements.",
-  "It is known as the Blazing Black Dragon.",
-  "In one return, hunters needed strong elemental damage to survive its Escaton Judgment."]},
- {n:"Shagaru Magala",c:"Elder Dragon",e:"Frenzy virus",d:"Monster Hunter 4 (2013)",p:[["#D9C27A","Pale gold"],["#F0ECE2","White"],["#8E9098","Silver"]],t:[
-  "It is the adult form of an eyeless monster that spreads a virus.",
-  "Its shining scales spread a stronger form of that virus.",
-  "It fires orbs of energy that burst on impact."]},
- {n:"Seregios",c:"Flying Wyvern",e:"None",d:"Monster Hunter 4 Ultimate (2014)",p:[["#D2A23A","Gold"],["#6A6A3A","Olive"],["#1E1D1A","Black"]],t:[
-  "It sheds blade-like scales that cause bleeding.",
-  "It was the flagship of its debut game.",
-  "It attacks with its talons in fast leaps."]},
- {n:"Glavenus",c:"Brute Wyvern",e:"Fire",d:"Monster Hunter Generations (2015)",p:[["#9A3A22","Rust red"],["#33302E","Charcoal"],["#E07A2A","Orange"]],t:[
-  "It sharpens its blade-like tail with its teeth.",
-  "Its tail glows red-hot when heated.",
-  "It is one of the Fated Four."]},
- {n:"Astalos",c:"Flying Wyvern",e:"Thunder",d:"Monster Hunter Generations (2015)",p:[["#2F7A4E","Emerald"],["#3E7AD6","Bright blue"],["#1E1E22","Black"]],t:[
-  "Its crest and wings crackle with electricity.",
-  "It is one of the Fated Four.",
-  "Its wings have insect-like membranes."]},
- {n:"Valstrax",c:"Elder Dragon",e:"Dragon",d:"Monster Hunter Generations Ultimate (2017)",p:[["#B02030","Crimson"],["#C4C8CE","Silver"],["#3E4046","Dark grey"]],t:[
-  "Its wings work like jet engines.",
-  "People once mistook it for a red comet.",
-  "It was the flagship of its debut game."]},
- {n:"Kulve Taroth",c:"Elder Dragon",e:"Fire",d:"Monster Hunter: World (2018)",p:[["#D9A836","Gold"],["#E0702A","Orange"],["#3E2E22","Dark brown"]],t:[
-  "Its body is coated in a layer of gold.",
-  "Large groups of hunters chase it together in a siege.",
-  "Its golden horns are prized rewards."]},
- {n:"Velkhana",c:"Elder Dragon",e:"Ice",d:"Monster Hunter World: Iceborne (2019)",p:[["#F0F2F4","White"],["#5E9CC8","Pale blue"],["#8A9098","Silver"]],t:[
-  "It freezes the air around it to form ice.",
-  "It was the flagship of its debut expansion.",
-  "It forms frozen spikes on its tail and forearms."]},
- {n:"Arkveld",c:"Unknown",e:"Dragon",d:"Monster Hunter Wilds (2025)",p:[["#EEEAE2","White"],["#6E7278","Steel grey"],["#A01E28","Dark red"]],t:[
-  "Hunters call it the White Wraith.",
-  "Chain-like blades extend from its wings.",
-  "It was believed to be extinct."]},
- {n:"Rey Dau",c:"Flying Wyvern",e:"Thunder",d:"Monster Hunter Wilds (2025)",p:[["#D9B030","Golden yellow"],["#2E2E34","Charcoal"],["#E8DEC4","Pale cream"]],t:[
-  "It rules the Windward Plains as their apex predator.",
-  "It fires a powerful blast of lightning.",
-  "It fights turf wars with the flagship of its debut game."]},
- {n:"Uth Duna",c:"Leviathan",e:"Water",d:"Monster Hunter Wilds (2025)",p:[["#24406A","Deep blue"],["#6A7480","Slate grey"],["#DCE6EC","White"]],t:[
-  "It rules the Scarlet Forest as its apex predator.",
-  "It coats itself in a membrane made from water and its own fluids.",
-  "Breaking its fins reveals a more slender body."]},
- {n:"Nu Udra",c:"Cephalopod",e:"Fire",d:"Monster Hunter Wilds (2025)",p:[["#1A1716","Black"],["#E0602A","Orange"],["#6A2A1E","Dark red"]],t:[
-  "It rules the Oilwell Basin as its apex predator.",
-  "It sets its own body alight to burn hunters.",
-  "Hunters can cut off and carve its tentacles."]},
- {n:"Jin Dahaad",c:"Leviathan",e:"Ice",d:"Monster Hunter Wilds (2025)",p:[["#9EC8E6","Pale blue"],["#EEF2F4","White"],["#4E6A86","Steel blue"]],t:[
-  "It rules the Iceshard Cliffs as their apex predator.",
-  "It fires a beam of ice.",
-  "It was the last apex predator Capcom revealed before launch."]}
-];
-
-const M = (n,c,e,d,p,t) => ({n,c,e,d,p,t});
-const BATCH_G12 = [
- // First generation: Monster Hunter (2004)
- M("Basarios","Flying Wyvern","Fire","Monster Hunter (2004)",[["#8E877C","Grey"],["#C2A878","Sandy tan"],["#B98A3A","Ochre"]],[
-  "Its rocky back lets it hide among boulders.","It is the young form of a larger rock wyvern.","It feeds on rocks and ore."]),
- M("Cephadrome","Piscine Wyvern","None","Monster Hunter (2004)",[["#CDB27E","Sand"],["#A07A3E","Ochre brown"],["#5E4630","Dark brown"]],[
-  "It swims through desert sand.","A sonic bomb forces it to the surface.","It leads schools of smaller sand-swimming wyverns."]),
- M("Velocidrome","Bird Wyvern","None","Monster Hunter (2004)",[["#3E6EB0","Blue"],["#1E1E24","Black"],["#E07A2A","Orange"]],[
-  "It leads a pack of blue raptors.","Its crest is far larger than those of its pack.","It is one of the first pack leaders new hunters face."]),
- M("Gendrome","Bird Wyvern","Paralysis","Monster Hunter (2004)",[["#D2B66A","Sand yellow"],["#5E6A3A","Olive"],["#C24A2A","Red"]],[
-  "Its bite can paralyse.","It leads a pack of desert raptors.","It ambushes hunters in the sand dunes."]),
- M("Iodrome","Bird Wyvern","Poison","Monster Hunter (2004)",[["#B0302A","Red"],["#E09A3A","Amber"],["#3A2A26","Dark brown"]],[
-  "It spits poison.","Its pack roams volcanic ground.","It is the largest of a red raptor pack."]),
- // First generation: Monster Hunter G (2005)
- M("Azure Rathalos","Flying Wyvern","Fire","Monster Hunter G (2005)",[["#2E5E9A","Azure blue"],["#1A2236","Dark navy"],["#A8B4C0","Pale grey"]],[
-  "Its scales are a deep sky blue.","It is a subspecies of the King of the Skies.","It is rarer than its red cousin."]),
- M("Silver Rathalos","Flying Wyvern","Fire","Monster Hunter G (2005)",[["#C8CCD2","Silver"],["#6E747C","Steel grey"],["#8A2A2A","Dark red"]],[
-  "Its scales shine silver in the sun.","It is the counterpart of a golden queen.","It is among the rarest of its kind."]),
- M("Pink Rathian","Flying Wyvern","Fire","Monster Hunter G (2005)",[["#D886A0","Pink"],["#2A2326","Black"],["#E8D6C6","Cream"]],[
-  "Its pink scales mark it as a subspecies of the Queen of the Land.","It is more aggressive than its green cousin.","Its poisoned tail is just as dangerous."]),
- M("Gold Rathian","Flying Wyvern","Fire","Monster Hunter G (2005)",[["#D9B03A","Gold"],["#EEDC9A","Pale gold"],["#7A5A22","Bronze"]],[
-  "Its golden scales shine in the sun.","It is the counterpart of a silver king.","It is among the rarest of its kind."]),
- M("Black Diablos","Flying Wyvern","None","Monster Hunter G (2005)",[["#1E1A18","Black"],["#4A3A2E","Dark brown"],["#E6DAC0","Bone"]],[
-  "It is a female in breeding season.","It is even more territorial than its sandy form.","It still eats cacti, despite its temper."]),
- M("White Monoblos","Flying Wyvern","None","Monster Hunter G (2005)",[["#F0ECE4","White"],["#D8C7A0","Pale sand"],["#8E8678","Bone grey"]],[
-  "It is a pale subspecies of the one-horned desert wyvern.","It rushes hunters with its single horn.","It burrows under the sand like its cousin."]),
- M("Black Gravios","Flying Wyvern","Fire","Monster Hunter G (2005)",[["#1E1C1C","Black"],["#4A4644","Charcoal"],["#C0452A","Red"]],[
-  "It is a darker subspecies of the rock wyvern.","Its dark shell is harder still.","Its heat beam can sweep across a whole area."]),
- M("Blue Yian Kut-Ku","Bird Wyvern","Fire","Monster Hunter G (2005)",[["#4E78B0","Blue"],["#EADFCF","Cream"],["#6E7280","Slate grey"]],[
-  "It is a blue subspecies of a big-eared bird wyvern.","It spits fireballs like its pink cousin.","Its huge ears fan out when it is startled."]),
- M("Purple Gypceros","Bird Wyvern","Poison","Monster Hunter G (2005)",[["#4A2A5E","Deep purple"],["#8A5A9A","Plum"],["#E2D6BE","Cream"]],[
-  "It is a darker purple subspecies of a rubbery bird wyvern.","Its crest still gives off a blinding flash.","It fakes its own death like its cousin."]),
- M("Red Khezu","Flying Wyvern","Thunder","Monster Hunter G (2005)",[["#B0302E","Red"],["#D9A8A0","Flesh pink"],["#8C8A88","Grey"]],[
-  "It is a red subspecies of an eyeless cave wyvern.","It lives in volcanic areas.","It stretches its neck far further than it looks."]),
- M("Green Plesioth","Piscine Wyvern","Water","Monster Hunter G (2005)",[["#4E9A4A","Bright green"],["#6A6A3A","Olive"],["#D9C77A","Pale yellow"]],[
-  "It is a brighter subspecies of a lake-dwelling fish wyvern.","It fires jets of pressurised water.","Like its cousin, its hip check is infamous."]),
- M("Ashen Lao-Shan Lung","Elder Dragon","None","Monster Hunter G (2005)",[["#8E8A86","Ash grey"],["#3E3A38","Charcoal"],["#B49A72","Pale tan"]],[
-  "Its hide is grey like ash.","Hunters fight it from a fortress, like its red cousin.","It walks on all fours like a giant lizard."]),
- M("Crimson Fatalis","Elder Dragon","Fire","Monster Hunter G (2005)",[["#B01E24","Crimson"],["#151417","Black"],["#E07A2A","Orange"]],[
-  "It is the red form of the Black Dragon.","Its fire burns hotter than its black form's.","Its body glows red when it is enraged."]),
- // First generation: Monster Hunter Freedom (2005)
- M("Scarred Yian Garuga","Bird Wyvern","Poison","Monster Hunter Rise: Sunbreak (2022)",[["#3A3E6E","Indigo"],["#1A1A1E","Black"],["#9A9690","Grey"]],[
-  "It is a battle-worn veteran covered in scars.","One of its ears is torn.","Its tail carries poisonous spikes."]),
- // Second generation: Monster Hunter 2 (2006)
- M("Blangonga","Fanged Beast","Ice","Monster Hunter 2 (2006)",[["#ECEAE4","White"],["#7A7E86","Ash grey"],["#8A6A9A","Pale purple"]],[
-  "It leads a troop of smaller apes in the snowy mountains.","It roars to call its troop to its side.","It throws chunks of snow at hunters."]),
- M("Bulldrome","Fanged Beast","None","Monster Hunter 2 (2006)",[["#7A5A3A","Brown"],["#3E2E22","Dark brown"],["#D9C7A0","Cream"]],[
-  "It leads a herd of wild boars.","It charges head first with huge tusks.","It is a larger, angrier boar than the rest of its herd."]),
- M("Congalala","Fanged Beast","None","Monster Hunter 2 (2006)",[["#D88AA0","Pink"],["#5E7A3A","Moss green"],["#E8D6C6","Cream"]],[
-  "It loves to eat mushrooms.","It breaks wind as an attack.","Its breath changes with what it has eaten."]),
- M("Daimyo Hermitaur","Carapaceon","Water","Monster Hunter 2 (2006)",[["#B0402A","Red"],["#E8E0CC","Bone white"],["#E08A3A","Orange"]],[
-  "It wears the skull of another monster as its shell.","It hides behind its claws like a shield.","It fires jets of water from its mouth."]),
- M("Shogun Ceanataur","Carapaceon","Water","Monster Hunter 2 (2006)",[["#3E5A7A","Steel blue"],["#E08A3A","Orange"],["#E8E0CC","Bone white"]],[
-  "It wears the skull of another monster as its shell.","Its long claws slice like blades.","It clings to walls and ceilings."]),
- M("Shen Gaoren","Carapaceon","None","Monster Hunter 2 (2006)",[["#8A5A3A","Rust brown"],["#E8E0CC","Bone white"],["#5E5A56","Grey"]],[
-  "It wears the skull of a giant Elder Dragon as its shell.","It is so tall that it towers over fortress walls.","Hunters fight it from a fortress."]),
- M("Yama Tsukami","Elder Dragon","None","Monster Hunter 2 (2006)",[["#5E7A4A","Moss green"],["#6A4E34","Brown"],["#D9CFA0","Pale yellow"]],[
-  "It floats through the air like a giant jellyfish.","Moss and trees grow on its body.","It can suck in nearby objects."]),
- M("White Fatalis","Elder Dragon","Thunder","Monster Hunter 2 (2006)",[["#F0EEEA","White"],["#8EB6E0","Pale blue"],["#A8ACB4","Silver"]],[
-  "It is the white form of the Black Dragon.","It calls down lightning.","Legends call it the ancestor of all dragons."]),
- M("Rusted Kushala Daora","Elder Dragon","Wind","Monster Hunter 2 (2006)",[["#A0582A","Rust orange"],["#5E4630","Brown"],["#8C9196","Steel grey"]],[
-  "Its metal hide has rusted over.","It is a Steel Dragon close to shedding its skin.","Its wind barrier is weaker in this state."]),
- // Second generation: Monster Hunter Freedom 2 (2007)
- M("Akantor","Flying Wyvern","Fire","Monster Hunter Freedom 2 (2007)",[["#1E1A1A","Black"],["#A0202A","Crimson"],["#E6DAC0","Bone"]],[
-  "It lives deep inside a volcano.","Huge tusks jut from its lower jaw.","It was a final challenge of its debut game."]),
- M("Giadrome","Bird Wyvern","Ice","Monster Hunter Freedom 2 (2007)",[["#7EB0D6","Pale blue"],["#ECEAE4","White"],["#2A3040","Navy"]],[
-  "It leads a pack of raptors in the snowy mountains.","It spits ice at hunters.","Its crest is much larger than its pack's."]),
- // Second generation: Monster Hunter Freedom Unite (2008)
- M("Yian Garuga","Bird Wyvern","Poison","Monster Hunter Freedom (2005)",[["#3A3E6E","Indigo"],["#1A1A1E","Black"],["#C8C0B0","Pale grey"]],[
-  "It looks like a darker, spikier cousin of a big-eared bird wyvern.","Its tail carries poisonous spikes.","It has a mane of coarse fur."]),
- M("Hypnocatrice","Bird Wyvern","Sleep","Monster Hunter Freedom Unite (2008)",[["#F0ECE4","White"],["#C0302A","Red"],["#3E6EB0","Blue"]],[
-  "Its beak can put hunters to sleep.","It looks like a huge, colourful bird.","Its tail feathers are prized."]),
- M("Lavasioth","Piscine Wyvern","Fire","Monster Hunter Freedom Unite (2008)",[["#C0402A","Red"],["#1E1A1A","Black"],["#E0802A","Orange"]],[
-  "It swims through lava.","Its body cools into hard armour on land.","It spits globs of molten rock."]),
- M("Vespoid Queen","Neopteron","Paralysis","Monster Hunter Freedom Unite (2008)",[["#E0C040","Yellow"],["#1E1E1E","Black"],["#B0302A","Red"]],[
-  "It rules a hive of stinging insects.","It hangs from the ceiling of its nest.","It calls its workers to defend it."]),
- M("Copper Blangonga","Fanged Beast","Fire","Monster Hunter Freedom Unite (2008)",[["#B0703A","Copper"],["#5E3E2A","Brown"],["#E09A4A","Orange"]],[
-  "It is a copper-furred subspecies of a snowy ape.","It lives in volcanic areas.","It leads a troop of smaller apes."]),
- M("Emerald Congalala","Fanged Beast","Fire","Monster Hunter Freedom Unite (2008)",[["#3E8A5A","Emerald"],["#D88AA0","Pink"],["#E8D6C6","Cream"]],[
-  "It is a green subspecies of a mushroom-loving ape.","It breathes fire.","It still breaks wind as an attack."]),
- M("Furious Rajang","Fanged Beast","Thunder","Monster Hunter Freedom Unite (2008)",[["#D9A836","Gold"],["#232224","Black"],["#B0302A","Red"]],[
-  "It is a variant that stays enraged.","Its fur stays gold for the whole fight.","It fires a beam of lightning from its mouth."]),
- M("Plum Daimyo Hermitaur","Carapaceon","Water","Monster Hunter Freedom Unite (2008)",[["#6E3A6E","Plum"],["#E8E0CC","Bone white"],["#5E5A62","Grey"]],[
-  "It is a purple subspecies of a skull-wearing crab.","It hides behind its claws like a shield.","It is tougher than its red cousin."]),
- M("Terra Shogun Ceanataur","Carapaceon","Water","Monster Hunter Freedom Unite (2008)",[["#5E4A34","Earth brown"],["#E8E0CC","Bone white"],["#6A6A3A","Olive"]],[
-  "It is a subspecies of a long-clawed, skull-wearing crab.","Its claws slice like blades.","It clings to walls and ceilings."])
-];
-
-const BATCH_G3 = [
- // Third generation: Monster Hunter Tri (2009)
- M("Agnaktor","Leviathan","Fire","Monster Hunter Tri (2009)",[["#E0702A","Orange"],["#2A2624","Charcoal"],["#B0302A","Red"]],[
-  "It tunnels through lava with its drill-like beak.","It fires a beam of heat from its mouth.","Its shell hardens as it cools."]),
- M("Barioth","Flying Wyvern","Ice","Monster Hunter Tri (2009)",[["#ECEAE4","White"],["#9EC8DE","Pale blue"],["#D9A23A","Amber"]],[
-  "Huge sabre-like tusks curve from its jaw.","Spikes on its wings grip the ice.","It hunts across the frozen tundra."]),
- M("Ceadeus","Elder Dragon","Water","Monster Hunter Tri (2009)",[["#24406A","Navy blue"],["#D9CFA0","Pale yellow"],["#7A8088","Grey"]],[
-  "It is a giant, whale-like dragon of the deep.","Its two great horns can be broken.","Hunters fight it in the ruins of a sunken city."]),
- M("Gigginox","Flying Wyvern","Poison","Monster Hunter Tri (2009)",[["#E8E2DC","Pale white"],["#8A96A0","Grey blue"],["#D9A8B0","Pink"]],[
-  "It lays young that latch onto prey.","It has no eyes and clings to cave ceilings.","It is a cousin of an eyeless cave wyvern."]),
- M("Gobul","Leviathan","Paralysis","Monster Hunter Tri (2009)",[["#6A5A3E","Brown"],["#5E6A3A","Moss green"],["#E0C040","Yellow"]],[
-  "It lures prey with a glowing lantern.","It puffs up its body and spines.","It hides on the lake bed with only its lure showing."]),
- M("Great Baggi","Bird Wyvern","Sleep","Monster Hunter Tri (2009)",[["#7EA6D0","Pale blue"],["#5A4E8A","Purple blue"],["#ECEAE4","White"]],[
-  "It spits a fluid that puts hunters to sleep.","It leads a pack of raptors in the tundra.","Its crest is far larger than its pack's."]),
- M("Great Jaggi","Bird Wyvern","None","Monster Hunter Tri (2009)",[["#E08A4A","Orange"],["#6A4A8A","Purple"],["#E8DCC6","Cream"]],[
-  "It leads its pack with a large frill on its head.","It howls to call its pack.","It is often the first large monster in its debut game."]),
- M("Royal Ludroth","Leviathan","Water","Monster Hunter Tri (2009)",[["#E0B040","Yellow"],["#C0502A","Orange red"],["#5E6A7A","Slate"]],[
-  "Its spongy mane soaks up water.","It sprays water from its mane.","It leads a harem of smaller aquatic monsters."]),
- M("Uragaan","Brute Wyvern","Fire","Monster Hunter Tri (2009)",[["#D9A03A","Gold orange"],["#4A4644","Dark grey"],["#B0402A","Red"]],[
-  "It uses its huge chin to smash rocks.","It curls up and rolls at hunters.","It feeds on minerals in volcanic areas."]),
- // Third generation: Monster Hunter Portable 3rd (2010)
- M("Amatsu","Elder Dragon","Water","Monster Hunter Portable 3rd (2010)",[["#F0EEEA","White"],["#A8B8C8","Pale blue grey"],["#4A5058","Dark grey"]],[
-  "It floats in the sky and controls storms.","Its long fins flow like silk.","Hunters fight it at the top of a tower in a storm."]),
- M("Arzuros","Fanged Beast","None","Monster Hunter Portable 3rd (2010)",[["#3E5E9A","Blue"],["#ECEAE4","White"],["#6A6A72","Grey"]],[
-  "It loves honey.","It digs into beehives with its claws.","Its forearms are armoured like shells."]),
- M("Lagombi","Fanged Beast","Ice","Monster Hunter Portable 3rd (2010)",[["#ECEAE4","White"],["#D8A0A8","Pink"],["#8A6A4E","Brown"]],[
-  "It slides across the snow on its belly.","It throws chunks of snow at hunters.","It looks like a giant rabbit."]),
- M("Volvidon","Fanged Beast","Paralysis","Monster Hunter Portable 3rd (2010)",[["#A0402E","Red brown"],["#D88A8E","Pink"],["#E0C040","Yellow"]],[
-  "It rolls into a ball to attack.","Its shell protects it like an armadillo's.","Its long tongue can grab hunters."]),
- M("Duramboros","Brute Wyvern","None","Monster Hunter Portable 3rd (2010)",[["#5E7A4A","Moss green"],["#6A4E34","Brown"],["#D9C7A0","Cream"]],[
-  "It swings a huge clubbed tail.","Plants grow on its back.","It is a peaceful plant eater until provoked."]),
- M("Nibelsnarf","Leviathan","None","Monster Hunter Portable 3rd (2010)",[["#CDB27E","Sand"],["#6E5E7A","Purple grey"],["#E8DCC0","Cream"]],[
-  "It swims through sand with its mouth open.","It sucks in sand and prey.","It ambushes hunters from beneath the desert."]),
- M("Great Wroggi","Bird Wyvern","Poison","Monster Hunter Portable 3rd (2010)",[["#E0A040","Orange yellow"],["#6A3A7A","Purple"],["#5E6A3A","Olive"]],[
-  "It breathes poison gas from a sac in its throat.","It leads a pack of smaller raptors.","Its gas sac swells before it attacks."]),
- M("Baleful Gigginox","Flying Wyvern","Thunder","Monster Hunter Portable 3rd (2010)",[["#1E1A22","Black"],["#5B3A6E","Purple"],["#7FB6E0","Bright blue"]],[
-  "It is a dark subspecies of a pale cave wyvern.","It discharges electricity from its body.","It lays young that latch onto prey."]),
- M("Brute Tigrex","Flying Wyvern","None","Monster Hunter Portable 3rd (2010)",[["#3A3230","Charcoal"],["#1E1A18","Black"],["#A0302A","Red"]],[
-  "It is a darker, heavier subspecies of a primitive wyvern.","Its roar can hurt hunters standing close.","It slams the ground with its forelimbs."]),
- M("Crimson Qurupeco","Bird Wyvern","Fire","Monster Hunter Portable 3rd (2010)",[["#A01E24","Crimson"],["#5A1A1E","Dark red"],["#1E1A1A","Black"]],[
-  "It is a red subspecies of a monster that mimics other calls.","It can summon dangerous monsters with its song.","It strikes its wings together to make sparks."]),
- M("Glacial Agnaktor","Leviathan","Ice","Monster Hunter Portable 3rd (2010)",[["#9EC8E6","Pale blue"],["#ECEAE4","White"],["#2A3E5E","Dark blue"]],[
-  "It tunnels through ice instead of lava.","It fires a freezing beam from its mouth.","It is a subspecies of a lava-swimming leviathan."]),
- M("Green Nargacuga","Flying Wyvern","None","Monster Hunter Portable 3rd (2010)",[["#3E6A3E","Dark green"],["#1E1E22","Black"],["#C0242A","Red"]],[
-  "It is a green subspecies of a panther-like wyvern.","It fires spikes from its tail.","It moves silently through the forest."]),
- M("Jade Barroth","Brute Wyvern","Ice","Monster Hunter Portable 3rd (2010)",[["#3E8A6A","Jade green"],["#ECEAE4","White"],["#7A7E86","Grey"]],[
-  "It coats itself in snow instead of mud.","It charges head first with its crown-like head.","It is a subspecies of a mud-loving wyvern."]),
- M("Purple Ludroth","Leviathan","Poison","Monster Hunter Portable 3rd (2010)",[["#6A3A7A","Purple"],["#E08A3A","Orange"],["#3A3040","Dark plum"]],[
-  "It is a purple subspecies of a sponge-maned leviathan.","It lives in volcanic areas.","It sprays fluid from its mane."]),
- M("Sand Barioth","Flying Wyvern","Ice","Monster Hunter Portable 3rd (2010)",[["#CDB27E","Sand"],["#D9A23A","Amber"],["#E8DCC0","Cream"]],[
-  "It is a sand-coloured subspecies of a sabre-toothed wyvern.","Spikes on its wings grip the ground.","Its huge tusks curve from its jaw."]),
- M("Steel Uragaan","Brute Wyvern","None","Monster Hunter Portable 3rd (2010)",[["#5E6670","Steel grey"],["#2A2C30","Dark grey"],["#A8ACB4","Silver"]],[
-  "It is a darker subspecies of a rock-rolling wyvern.","Its chin is hard as steel.","It curls up and rolls at hunters."]),
- // Third generation: Monster Hunter 3 Ultimate (2011)
- M("Abyssal Lagiacrus","Leviathan","Thunder","Monster Hunter 3 Ultimate (2011)",[["#1A1E2A","Black"],["#7FB6E0","Bright blue"],["#8A2A2A","Dark red"]],[
-  "It is a huge, deep-sea form of the lord of the seas.","It is only ever fought underwater.","Its spines store electricity."]),
- M("Ivory Lagiacrus","Leviathan","Thunder","Monster Hunter 3 Ultimate (2011)",[["#ECE6D6","Ivory"],["#9EC8E6","Pale blue"],["#D9B03A","Gold"]],[
-  "It is a pale subspecies of the lord of the seas.","It lives on land rather than in the sea.","Its spines store electricity."]),
- M("Dire Miralis","Elder Dragon","Fire","Monster Hunter 3 Ultimate (2011)",[["#1A1414","Black"],["#C0402A","Red"],["#E0802A","Orange"]],[
-  "It rises from a burning sea.","Its body glows with molten fire.","It is a fearsome Elder Dragon of its debut game."]),
- M("Goldbeard Ceadeus","Elder Dragon","Water","Monster Hunter 3 Ultimate (2011)",[["#D9A836","Gold"],["#24406A","Navy blue"],["#7A8088","Grey"]],[
-  "Its beard shines gold.","It is a giant, whale-like dragon of the deep.","Its great horns can be broken."]),
- M("Hallowed Jhen Mohran","Elder Dragon","None","Monster Hunter 3 Ultimate (2011)",[["#A8C4E6","Pale blue"],["#ECE6D6","Ivory"],["#D9B03A","Gold"]],[
-  "It is a pale subspecies of a sand-swimming dragon.","Hunters fight it from a sand ship.","It swims through the desert like a whale."]),
- M("Rust Duramboros","Brute Wyvern","None","Monster Hunter 3 Ultimate (2011)",[["#A0582A","Rust"],["#CDB27E","Sand"],["#5E4630","Brown"]],[
-  "It is a rust-coloured subspecies of a club-tailed plant eater.","It lives in the desert.","It swings its huge clubbed tail."]),
- M("Savage Deviljho","Brute Wyvern","Dragon","Monster Hunter 3 Ultimate (2011)",[["#2E3A26","Dark green"],["#C0202A","Red"],["#1A1A1A","Black"]],[
-  "It is a variant that stays in a permanent rage.","Its body glows red from end to end.","It can lift other monsters in its jaws."]),
- M("Stygian Zinogre","Fanged Wyvern","Dragon","Monster Hunter 3 Ultimate (2011)",[["#1A1A1E","Black"],["#B01E24","Red"],["#6E6A72","Grey"]],[
-  "It is a dark subspecies of the Thunder Wolf Wyvern.","It charges itself with dragon energy instead of thunder.","It gathers its energy from swarms of insects."])
-];
-
-const BATCH_G4 = [
- // Fourth generation: Monster Hunter 4 (2013)
- M("Dah'ren Mohran","Elder Dragon","None","Monster Hunter 4 (2013)",[["#5E4630","Dark brown"],["#CDB27E","Sand"],["#E6DAC0","Bone"]],[
-  "Hunters fight it from a sand ship.","It is a larger relative of another sand-swimming dragon.","It swims through the desert like a whale."]),
- M("Dalamadur","Elder Dragon","Fire","Monster Hunter 4 (2013)",[["#3A3A40","Dark grey"],["#A0402A","Rust red"],["#C49A5A","Ochre"]],[
-  "It is a gigantic, serpent-like dragon.","It can call down meteors.","Its body coils around the whole battlefield."]),
- M("Kecha Wacha","Fanged Beast","Water","Monster Hunter 4 (2013)",[["#A07A9A","Mauve"],["#6A4E34","Brown"],["#E8DCC6","Cream"]],[
-  "It swings through the trees on vines.","It covers its face with its huge ears.","It sprays water from its trunk-like snout."]),
- M("Molten Tigrex","Flying Wyvern","Fire","Monster Hunter 4 (2013)",[["#C0402A","Red"],["#E0802A","Orange"],["#1E1A18","Black"]],[
-  "It is a red-hot variant of a primitive wyvern.","It lives in volcanic areas.","Its body heats up the air around it."]),
- M("Najarala","Snake Wyvern","None","Monster Hunter 4 (2013)",[["#2F6E6A","Teal"],["#D9B03A","Gold"],["#E8DCC0","Cream"]],[
-  "It coils itself around hunters.","Its scales vibrate to make a deafening sound.","It slithers like a giant snake."]),
- M("Nerscylla","Temnoceran","Sleep","Monster Hunter 4 (2013)",[["#5B3A6E","Purple"],["#A8A29A","Pale grey"],["#1E1A22","Black"]],[
-  "It wears the hide of another monster.","It spins webs in caves.","It is a spider-like hunter of the dark."]),
- M("Oroshi Kirin","Elder Dragon","Ice","Monster Hunter 4 (2013)",[["#A8C4E6","Pale blue"],["#F0EEEA","White"],["#8A96A6","Silver blue"]],[
-  "It is an icy subspecies of a horse-like Elder Dragon.","It summons pillars of ice.","Its single horn is its most prized part."]),
- M("Ruby Basarios","Flying Wyvern","Fire","Monster Hunter 4 (2013)",[["#B02A3A","Ruby red"],["#D88A9A","Pink"],["#8E877C","Grey"]],[
-  "Its rocky back shines with red gems.","It is a subspecies of a young rock wyvern.","It hides among boulders."]),
- M("Seltas","Neopteron","None","Monster Hunter 4 (2013)",[["#7AAA3A","Lime green"],["#E0C040","Yellow"],["#1E1E1E","Black"]],[
-  "It is the smaller male of a beetle-like pair.","It charges with its sharp horn.","Its queen can carry it as a weapon."]),
- M("Seltas Queen","Neopteron","Water","Monster Hunter 4 (2013)",[["#C08A3A","Amber"],["#6A4E34","Brown"],["#5E7A3A","Green"]],[
-  "It calls males to its side and uses them in battle.","It is far larger than the males of its kind.","It sprays fluid from its tail."]),
- M("Tetsucabra","Amphibian","None","Monster Hunter 4 (2013)",[["#C0502A","Red orange"],["#1E1A1A","Black"],["#E6DAC0","Bone"]],[
-  "It lifts boulders with its huge tusks.","It looks like a giant frog.","Its tusks are its pride."]),
- M("Zamtrios","Amphibian","Ice","Monster Hunter 4 (2013)",[["#9EC8E6","Pale blue"],["#ECEAE4","White"],["#6E747C","Grey"]],[
-  "It inflates like a pufferfish.","It armours itself in ice.","Its young are called Zamite."]),
- // Fourth generation: Monster Hunter 4 Ultimate (2014)
- M("Ash Kecha Wacha","Fanged Beast","Ice","Monster Hunter 4 Ultimate (2014)",[["#8E8A86","Ash grey"],["#5E7A4A","Green"],["#E8DCC6","Cream"]],[
-  "It is a grey subspecies of a vine-swinging monkey.","It covers its face with its huge ears.","It sprays fluid from its snout."]),
- M("Berserk Tetsucabra","Amphibian","None","Monster Hunter 4 Ultimate (2014)",[["#8A1E1E","Dark red"],["#1E1A1A","Black"],["#E6DAC0","Bone"]],[
-  "It is a variant that flies into rages.","It lifts boulders with its huge tusks.","It looks like a giant, angry frog."]),
- M("Chaotic Gore Magala","Demi Elder","Frenzy virus","Monster Hunter 4 Ultimate (2014)",[["#1C1A1F","Black"],["#D9C27A","Gold"],["#5B3A6E","Purple"]],[
-  "It failed to finish molting into its adult form.","It has one shining horn.","Its scales spread a virus that drives monsters into a frenzy."]),
- M("Desert Seltas","Neopteron","None","Monster Hunter 4 Ultimate (2014)",[["#CDB27E","Sand"],["#6A4E34","Brown"],["#1E1E1E","Black"]],[
-  "It is a desert subspecies of a beetle-like male.","It charges with its heavy horn.","Its queen can carry it as a weapon."]),
- M("Desert Seltas Queen","Neopteron","None","Monster Hunter 4 Ultimate (2014)",[["#C49A5A","Ochre"],["#5E4630","Dark brown"],["#CDB27E","Sand"]],[
-  "It is a desert subspecies of a beetle-like queen.","It calls males to its side and uses them in battle.","It digs into the sand to ambush hunters."]),
- M("Gogmazios","Elder Dragon","Fire","Monster Hunter 4 Ultimate (2014)",[["#1A1716","Black"],["#B0302A","Red"],["#8A6A3A","Bronze"]],[
-  "It is coated in sticky tar.","It hoards weapons and scrap metal.","Hunters defend a fortress against it."]),
- M("Raging Brachydios","Brute Wyvern","Blast","Monster Hunter 4 Ultimate (2014)",[["#1F2433","Navy black"],["#E0802A","Orange"],["#B6E04A","Lime green"]],[
-  "It is a variant whose explosive slime burns hotter.","It can set off a huge blast that covers the whole area.","Its fists are coated in explosive slime."]),
- M("Shah Dalamadur","Elder Dragon","Fire","Monster Hunter 4 Ultimate (2014)",[["#151417","Black"],["#D9A836","Gold"],["#B0302A","Red"]],[
-  "It is an even larger variant of a gigantic serpent dragon.","It can call down meteors.","Its body coils around the whole battlefield."]),
- M("Shrouded Nerscylla","Temnoceran","Poison","Monster Hunter 4 Ultimate (2014)",[["#1E1A22","Black"],["#5B3A6E","Purple"],["#6E6A72","Grey"]],[
-  "It is a subspecies of a hide-wearing spider.","It wears the shed skin of a virus-spreading monster.","It spins webs in caves."]),
- M("Tidal Najarala","Snake Wyvern","Water","Monster Hunter 4 Ultimate (2014)",[["#24406A","Deep blue"],["#3E7A7A","Teal"],["#ECEAE4","White"]],[
-  "It is a watery subspecies of a coiling snake wyvern.","Its scales vibrate to make a deafening sound.","It coils itself around hunters."]),
- M("Tigerstripe Zamtrios","Amphibian","Water","Monster Hunter 4 Ultimate (2014)",[["#E08A3A","Orange"],["#1E1E1E","Black"],["#5E9CC8","Blue"]],[
-  "It is a striped subspecies of a shark-like amphibian.","It inflates like a pufferfish.","Its young are called Zamite."]),
- // Fourth generation: Monster Hunter Generations (2015)
- M("Gammoth","Fanged Beast","Ice","Monster Hunter Generations (2015)",[["#ECEAE4","White"],["#7A5A3A","Brown"],["#9EC8DE","Pale blue"]],[
-  "It looks like a giant mammoth.","It slams prey with its long trunk.","It is one of the Fated Four."]),
- M("Great Maccao","Bird Wyvern","None","Monster Hunter Generations (2015)",[["#5E8A3A","Green"],["#E0C040","Yellow"],["#C0402A","Red"]],[
-  "It bounces on its tail like a spring.","It leads a pack of smaller raptors.","It kicks with its powerful legs."]),
- M("Malfestio","Bird Wyvern","Confusion","Monster Hunter Generations (2015)",[["#6E4A8A","Violet"],["#8A8A92","Grey"],["#ECEAE4","White"]],[
-  "It is an owl-like wyvern of the night.","Its wings scatter a golden dust that leaves hunters confused.","It flies almost silently."]),
- M("Nakarkos","Leviathan","Water","Monster Hunter Generations (2015)",[["#E6DAC0","Bone white"],["#1E1A1A","Black"],["#5B3A6E","Purple"]],[
-  "It wears the bones of other monsters.","It lives deep in a ruined, bone-filled lair.","It attacks with long, grasping tentacles."]),
- M("Crystalbeard Uragaan","Brute Wyvern","Fire","Monster Hunter Generations (2015)",[["#7A5A9A","Amethyst"],["#D9A03A","Gold"],["#4A4644","Grey"]],[
-  "It is a Deviant whose chin is covered in crystals.","It curls up and rolls at hunters.","Its crystals shatter into shards."]),
- M("Deadeye Yian Garuga","Bird Wyvern","Poison","Monster Hunter Generations (2015)",[["#3A3E6E","Indigo"],["#1A1A1E","Black"],["#9A9690","Grey"]],[
-  "It is a Deviant that has lost an eye in battle.","Its tail carries poisonous spikes.","It is a hardened veteran of countless fights."]),
- M("Dreadking Rathalos","Flying Wyvern","Fire","Monster Hunter Generations (2015)",[["#1E1A1A","Black"],["#A01E24","Crimson"],["#E07A2A","Orange"]],[
-  "It is a Deviant of the King of the Skies.","Its scales look scorched and battle-worn.","Its fireballs explode on impact."]),
- M("Dreadqueen Rathian","Flying Wyvern","Poison","Monster Hunter Generations (2015)",[["#3A5A2E","Dark green"],["#6A3A7A","Purple"],["#1E1A1A","Black"]],[
-  "It is a Deviant of the Queen of the Land.","Its poison is far stronger than normal.","Its tail spikes are larger and more toxic."]),
- M("Drilltusk Tetsucabra","Amphibian","None","Monster Hunter Generations (2015)",[["#E6DAC0","Bone"],["#C0502A","Red orange"],["#1E1A1A","Black"]],[
-  "It is a Deviant with one enormous, drill-like tusk.","It digs through the ground with its tusk.","It looks like a giant frog."]),
- M("Grimclaw Tigrex","Flying Wyvern","None","Monster Hunter Generations (2015)",[["#D9A33A","Yellow"],["#3E5C8A","Blue"],["#3A3230","Dark grey"]],[
-  "It is a Deviant with huge, scarred claws.","Its roar can hurt hunters standing close.","It slashes with its claws in wide arcs."]),
- M("Hellblade Glavenus","Brute Wyvern","Fire","Monster Hunter Generations (2015)",[["#33302E","Charcoal"],["#B0302A","Red"],["#8A9098","Steel"]],[
-  "It is a Deviant with an even larger tail blade.","It sharpens its tail with its teeth.","Its tail glows red-hot when heated."]),
- M("Redhelm Arzuros","Fanged Beast","None","Monster Hunter Generations (2015)",[["#A0302A","Red"],["#3E5E9A","Blue"],["#6A6A72","Grey"]],[
-  "It is a Deviant with a red, helm-like head.","It loves honey.","Its forearms are armoured like shells."]),
- M("Silverwind Nargacuga","Flying Wyvern","None","Monster Hunter Generations (2015)",[["#C4C8CE","Silver"],["#1E1E22","Black"],["#C0242A","Red"]],[
-  "It is a Deviant with silver-tinted fur.","It fires spikes from its tail.","It moves faster than the wind."]),
- M("Snowbaron Lagombi","Fanged Beast","Ice","Monster Hunter Generations (2015)",[["#ECEAE4","White"],["#7E9CBC","Grey blue"],["#D8A0A8","Pink"]],[
-  "It is a Deviant of a rabbit-like monster.","It throws huge chunks of snow.","It slides across the snow on its belly."]),
- M("Stonefist Hermitaur","Carapaceon","Water","Monster Hunter Generations (2015)",[["#8E877C","Grey"],["#B0402A","Red"],["#E6DAC0","Bone"]],[
-  "It is a Deviant with huge, stone-like fists.","It wears a skull as its shell.","It hides behind its claws like a shield."]),
- M("Thunderlord Zinogre","Fanged Wyvern","Thunder","Monster Hunter Generations (2015)",[["#24406A","Dark blue"],["#E2C043","Gold"],["#E9E6DD","White"]],[
-  "It is a Deviant of the Thunder Wolf Wyvern.","It charges far more power than normal.","It gathers energy from swarms of insects."]),
- // Fourth generation: Monster Hunter Generations Ultimate (2017)
- M("Ahtal-Ka","Neopteron","None","Monster Hunter Generations Ultimate (2017)",[["#D9B03A","Gold"],["#6A3A7A","Purple"],["#3E5E9A","Blue"]],[
-  "It is a mantis-like insect that builds with scrap.","It ties together wreckage with silk.","It pilots a giant fortress of its own making."]),
- M("Ahtal-Neset","Neopteron","None","Monster Hunter Generations Ultimate (2017)",[["#A0582A","Rust"],["#E6DAC0","Bone"],["#D9B03A","Gold"]],[
-  "It is a giant fortress built from scrap and bones.","A small insect pilots it from inside.","It wields old weapons and wreckage as limbs."]),
- M("Bloodbath Diablos","Flying Wyvern","None","Monster Hunter Generations Ultimate (2017)",[["#8A1E1E","Dark red"],["#E6DAC0","Bone"],["#4A3A2E","Dark brown"]],[
-  "It is a Deviant with a bloodthirsty temper.","It burrows beneath the sand.","Its horns are scarred from endless fighting."]),
- M("Boltreaver Astalos","Flying Wyvern","Thunder","Monster Hunter Generations Ultimate (2017)",[["#2F7A4E","Emerald"],["#D9B03A","Gold"],["#1E1E22","Black"]],[
-  "It is a Deviant of an electric Fated Four wyvern.","Its crest and wings crackle with power.","It charges itself before huge attacks."]),
- M("Elderfrost Gammoth","Fanged Beast","Ice","Monster Hunter Generations Ultimate (2017)",[["#ECEAE4","White"],["#5E9CC8","Pale blue"],["#7A5A3A","Brown"]],[
-  "It is a Deviant of a mammoth-like Fated Four beast.","Its body is armoured in thick ice.","It slams prey with its long trunk."]),
- M("Nightcloak Malfestio","Bird Wyvern","Confusion","Monster Hunter Generations Ultimate (2017)",[["#1E1A22","Black"],["#5B3A6E","Purple"],["#D9B03A","Gold"]],[
-  "It is a Deviant of an owl-like wyvern.","Its wings scatter a golden dust that leaves hunters confused.","It bends light with its twilight-coloured wings to hide itself."]),
- M("Rustrazor Ceanataur","Carapaceon","Water","Monster Hunter Generations Ultimate (2017)",[["#A0582A","Rust"],["#5E4A6E","Dusk purple"],["#E6DAC0","Bone"]],[
-  "It is a Deviant with long, rusted blade-like claws.","It wears a skull as its shell.","It clings to walls and ceilings."]),
- M("Soulseer Mizutsune","Leviathan","Water","Monster Hunter Generations Ultimate (2017)",[["#EDE9E2","White"],["#B9A0CF","Lilac"],["#5E9CC8","Blue"]],[
-  "It is a Deviant of a bubble-making, fox-like Fated Four leviathan.","It is said to guide the souls of the dead.","Its bubbles can leave hunters slipping and sliding."])
-];
-
-const W = "Monster Hunter: World (2018)", IB = "Monster Hunter World: Iceborne (2019)", RI = "Monster Hunter Rise (2021)", SB = "Monster Hunter Rise: Sunbreak (2022)";
-const BATCH_G5 = [
- // Fifth generation: Monster Hunter: World (2018)
- M("Ancient Leshen","Relict","None",W,[["#5E4630","Brown"],["#E6DAC0","Bone"],["#1A1A1A","Black"]],[
-  "It came from another world through a game collaboration.","It is an ancient forest spirit with an antlered skull.","It summons crows and roots to attack."]),
- M("Leshen","Relict","None",W,[["#5E4630","Brown"],["#5E7A4A","Moss green"],["#E6DAC0","Bone"]],[
-  "It came from another world through a game collaboration.","It is a forest spirit that wears a stag skull.","It fades into a swarm of crows."]),
- M("Behemoth","Elder Dragon","None",W,[["#5B3A6E","Purple"],["#6E6A72","Grey"],["#D9B03A","Gold"]],[
-  "It came from a famous fantasy role-playing series.","It can cast a devastating meteor spell.","Hunters fight it in roles such as tank and healer."]),
- M("Bazelgeuse","Flying Wyvern","Blast",W,[["#3A3A40","Dark grey"],["#B0302A","Red"],["#E0802A","Orange"]],[
-  "It drops explosive scales as it flies.","It crashes into hunts uninvited.","It roams the whole region looking for prey."]),
- M("Dodogama","Fanged Wyvern","Blast",W,[["#6E4A8A","Purple"],["#7A7E86","Grey"],["#D9B03A","Gold"]],[
-  "It eats rocks and turns them explosive.","It has a huge lower jaw.","It is usually calm until provoked."]),
- M("Great Girros","Fanged Wyvern","Paralysis",W,[["#24406A","Navy blue"],["#D9B03A","Gold"],["#6E747C","Grey"]],[
-  "Its bite paralyses prey.","It leads a pack in the Rotten Vale.","Its head crest is like a huge fang-lined hood."]),
- M("Jyuratodus","Piscine Wyvern","Water",W,[["#7A5A3A","Brown"],["#E08A3A","Orange"],["#3E2E22","Dark brown"]],[
-  "It swims through mud.","It coats itself in mud armour.","It lives in the Wildspire Waste."]),
- M("Kulu-Ya-Ku","Bird Wyvern","None",W,[["#8EB6D0","Pale blue"],["#C9B08A","Tan"],["#E8DCC6","Cream"]],[
-  "It carries rocks to use as a shield and a club.","It loves to steal eggs.","It is one of the first monsters new hunters meet."]),
- M("Legiana","Flying Wyvern","Ice",W,[["#ECEAE4","White"],["#9EC8DE","Pale blue"],["#3E7A7A","Teal"]],[
-  "It glides on the winds of the Coral Highlands.","It freezes the air with its wings.","It is sleek and almost weightless."]),
- M("Paolumu","Flying Wyvern","None",W,[["#E8DCC6","Cream"],["#D8A0A8","Pale pink"],["#7A7E86","Grey"]],[
-  "It inflates its neck sac to float.","Its fluffy fur fills with air.","It lives in the Coral Highlands."]),
- M("Pukei-Pukei","Bird Wyvern","Poison",W,[["#5E8A3A","Green"],["#6A3A7A","Purple"],["#E0C040","Yellow"]],[
-  "It stores poison from the plants it eats.","It sprays poison from its tail.","It has a long, chameleon-like tongue."]),
- M("Radobaan","Brute Wyvern","Sleep",W,[["#E6DAC0","Bone"],["#1E1A1A","Black"],["#5B3A6E","Purple"]],[
-  "It covers itself in bones.","It rolls at hunters like a boulder.","It lives in the Rotten Vale."]),
- M("Tobi-Kadachi","Fanged Wyvern","Thunder",W,[["#3E5E9A","Blue"],["#E8DCC6","Cream"],["#E0C040","Yellow"]],[
-  "It glides between trees.","It builds static charge in its fur.","It is a flying squirrel-like wyvern."]),
- M("Tzitzi-Ya-Ku","Bird Wyvern","None",W,[["#3E7A7A","Teal"],["#6A3A7A","Purple"],["#E0C040","Yellow"]],[
-  "It dazzles prey with a flashing frill.","It hunts in the Coral Highlands.","It stuns hunters with bursts of light."]),
- M("Vaal Hazak","Elder Dragon","Effluvium",W,[["#A8A29A","Pale grey"],["#3A4A32","Dark green"],["#8A2A2A","Dark red"]],[
-  "It lives deep in the Rotten Vale.","It spreads a deadly effluvium.","Its body looks like a rotting corpse."]),
- M("Xeno'jiiva","Elder Dragon","Dragon",W,[["#ECEAE4","White"],["#5E9CC8","Bright blue"],["#B0302A","Red"]],[
-  "It is the final monster of its debut game's story.","Its body glows with stored energy.","It was born in a hidden place deep underground."]),
- M("Zorah Magdaros","Elder Dragon","Fire",W,[["#1E1A1A","Black"],["#E0702A","Orange"],["#6E6A72","Grey"]],[
-  "It is so huge it is like a walking volcano.","Hunters fight it from a barricade with cannons.","Its back has glowing magma cores."]),
- // Fifth generation: Monster Hunter World: Iceborne (2019)
- M("Acidic Glavenus","Brute Wyvern","Water",IB,[["#5E6A7A","Slate"],["#9AC84A","Lime green"],["#E6DAC0","Bone"]],[
-  "It is a subspecies that coats its tail in acid.","It sharpens its blade-like tail with its teeth.","Its acid wears away armour."]),
- M("Banbaro","Brute Wyvern","None",IB,[["#7A5A3A","Brown"],["#ECEAE4","White"],["#D9B03A","Gold"]],[
-  "It charges while carrying trees on its antlers.","It scoops up snow and boulders to hurl.","It lives in the Hoarfrost Reach."]),
- M("Beotodus","Piscine Wyvern","Ice",IB,[["#7A7E86","Grey"],["#ECEAE4","White"],["#9EC8DE","Pale blue"]],[
-  "It swims through snow.","It has a horn on its head.","A sonic bomb can force it out of the snow."]),
- M("Blackveil Vaal Hazak","Elder Dragon","Effluvium",IB,[["#1A1A1A","Black"],["#5A5A5E","Ash grey"],["#D8D2C4","Bone white"]],[
-  "It is a variant that absorbs effluvium.","It lives deep in the Rotten Vale.","It can drain health from hunters nearby."]),
- M("Coral Pukei-Pukei","Bird Wyvern","Water",IB,[["#D88A8E","Pink"],["#3E7A7A","Teal"],["#6A3A7A","Purple"]],[
-  "It is a subspecies that sprays water instead of poison.","It lives in the Coral Highlands.","It has a long, chameleon-like tongue."]),
- M("Ebony Odogaron","Fanged Wyvern","Dragon",IB,[["#1A1A1A","Black"],["#B0302A","Red"],["#5A1A1E","Dark red"]],[
-  "It is a dark subspecies of a bleeding-claw hunter.","Its attacks carry dragon power.","It is even more relentless than its red cousin."]),
- M("Frostfang Barioth","Flying Wyvern","Ice",IB,[["#ECEAE4","White"],["#9EC8DE","Pale blue"],["#D9A23A","Amber"]],[
-  "It is a fiercer variant of a sabre-toothed wyvern.","Its tusks are huge and frosted.","Spikes on its wings grip the ice."]),
- M("Fulgur Anjanath","Brute Wyvern","Thunder",IB,[["#7A7E86","Grey"],["#5E9CE0","Bright blue"],["#ECEAE4","White"]],[
-  "It is a subspecies that fires lightning from its jaws.","Its sail-like flaps charge with electricity.","It extends a nasal membrane when angry."]),
- M("Namielle","Elder Dragon","Water",IB,[["#24406A","Navy"],["#7FB6E0","Bright blue"],["#D9B03A","Gold"]],[
-  "It controls water and electricity together.","It glows like a deep-sea creature.","It floods the ground around it."]),
- M("Nightshade Paolumu","Flying Wyvern","Sleep",IB,[["#3A3A40","Dark grey"],["#5B3A6E","Purple"],["#3E7A7A","Teal"]],[
-  "It is a dark subspecies of a floating wyvern.","Its breath can put hunters to sleep.","It inflates its neck sac to float."]),
- M("Ruiner Nergigante","Elder Dragon","None",IB,[["#1C1C20","Black"],["#E5E2DA","Bone white"],["#A0202A","Red"]],[
-  "It is a variant whose spikes grow back faster.","It feeds on other Elder Dragons.","It dives at its target from a great height."]),
- M("Safi'jiiva","Elder Dragon","Dragon",IB,[["#A01E24","Crimson"],["#1A1A1A","Black"],["#E04A2A","Red"]],[
-  "It is the adult form of a 2018 game's final monster.","Hunters fight it together in a siege.","It absorbs energy from its surroundings."]),
- M("Seething Bazelgeuse","Flying Wyvern","Blast",IB,[["#1A1A1A","Black"],["#B0302A","Red"],["#E0802A","Orange"]],[
-  "It is a variant with even more explosive scales.","It crashes into hunts uninvited.","Its scales glow red-hot before they explode."]),
- M("Shara Ishvalda","Elder Dragon","None",IB,[["#8E877C","Grey"],["#ECEAE4","White"],["#D9B03A","Gold"]],[
-  "It is the final story boss of its debut expansion.","It hides under a shell of rock.","It attacks with powerful vibrations."]),
- M("Shrieking Legiana","Flying Wyvern","Ice",IB,[["#ECEAE4","White"],["#9EC8DE","Pale blue"],["#A8ACB4","Silver"]],[
-  "It is a variant with a piercing shriek.","It freezes the air with its wings.","It glides on cold winds."]),
- M("Viper Tobi-Kadachi","Fanged Wyvern","Poison",IB,[["#E07A2A","Orange"],["#6A3A7A","Purple"],["#1A1A1A","Black"]],[
-  "It is a subspecies with poisonous spines.","It glides between trees.","It lives in the Hoarfrost Reach."]),
- // Fifth generation: Monster Hunter Rise (2021)
- M("Aknosom","Bird Wyvern","Fire",RI,[["#C0302A","Red"],["#ECEAE4","White"],["#D9B03A","Gold"]],[
-  "It stands on one leg like a crane.","Its crest opens like a parasol.","It breathes fire."]),
- M("Almudron","Leviathan","Water",RI,[["#7A7E86","Grey"],["#7A5A3A","Brown"],["#E07A2A","Orange"]],[
-  "It controls golden mud with its tail.","It sinks into mud to ambush prey.","It looks like a giant catfish with legs."]),
- M("Bishaten","Fanged Beast","None",RI,[["#6A3A7A","Purple"],["#C0302A","Red"],["#D9B03A","Gold"]],[
-  "It throws fruit at hunters.","It hangs from branches by its tail.","Its look recalls a long-nosed mountain spirit."]),
- M("Goss Harag","Fanged Beast","Ice",RI,[["#6A4E34","Brown"],["#ECEAE4","White"],["#9EC8DE","Pale blue"]],[
-  "It forms blades of ice from its breath.","It is a huge, bear-like beast.","Its belly swells when it stores frost."]),
- M("Great Izuchi","Bird Wyvern","None",RI,[["#3E7A7A","Teal"],["#7A7E86","Grey"],["#ECEAE4","White"]],[
-  "It always hunts with two smaller companions.","Its tail is shaped like a blade.","It is one of the first monsters new hunters meet."]),
- M("Rakna-Kadaki","Temnoceran","Fire",RI,[["#ECEAE4","White"],["#E0802A","Orange"],["#D88AA0","Pink"]],[
-  "It is a queen spider with young on its back.","Its silk ignites into flame.","It hangs from webs in the Flooded Forest."]),
- M("Somnacanth","Leviathan","Sleep",RI,[["#6A3A7A","Purple"],["#D88AA0","Pink"],["#3E7A7A","Teal"]],[
-  "It is a mermaid-like leviathan.","It scatters powder that puts hunters to sleep.","It lives in watery areas."]),
- M("Tetranadon","Amphibian","Water",RI,[["#5E8A3A","Green"],["#E0C040","Yellow"],["#6A4E34","Brown"]],[
-  "It looks like a kappa from folklore.","It swallows prey whole.","It puffs up to bounce hunters away."]),
- M("Crimson Glow Valstrax","Elder Dragon","Dragon",RI,[["#B02030","Crimson"],["#C4C8CE","Silver"],["#3E4046","Dark grey"]],[
-  "Its wings work like jet engines.","It returned in a 2021 game under a new name.","People once mistook it for a red comet."]),
- M("Thunder Serpent Narwa","Elder Dragon","Thunder",RI,[["#3E7A7A","Teal"],["#D9B03A","Gold"],["#6E4A8A","Violet"]],[
-  "It is a serpentine dragon that controls lightning.","It is one of a mated pair of serpent dragons.","It floats with rings of electric energy."]),
- M("Wind Serpent Ibushi","Elder Dragon","Wind",RI,[["#3E8A5A","Green"],["#ECEAE4","White"],["#D9B03A","Gold"]],[
-  "It is a serpentine dragon that controls wind.","It searches for its mate across the land.","It can create huge whirlwinds."]),
- M("Narwa the Allmother","Elder Dragon","Thunder",RI,[["#D9B03A","Gold"],["#3E7A7A","Teal"],["#C8E0A0","Pale green"]],[
-  "It is the final form of a thunder serpent dragon.","It is the true final boss of its debut game.","It absorbs the power of its mate."]),
- M("Apex Arzuros","Fanged Beast","None",RI,[["#3E5E9A","Blue"],["#A01E24","Red"],["#6A6A72","Grey"]],[
-  "It is an Apex form that leads a Rampage.","It loves honey.","Its forearms are armoured like shells."]),
- M("Apex Diablos","Flying Wyvern","None",RI,[["#C9A877","Sandy tan"],["#A01E24","Red"],["#E6DAC0","Bone"]],[
-  "It is an Apex form that leads a Rampage.","It burrows beneath the sand.","Despite its horns, it eats cacti."]),
- M("Apex Mizutsune","Leviathan","Water",RI,[["#EDE9E2","White"],["#A01E24","Red"],["#D9A3C8","Lilac pink"]],[
-  "It is an Apex form that leads a Rampage.","It produces bubbles from its fur.","Hunters often compare it to a fox."]),
- M("Apex Rathalos","Flying Wyvern","Fire",RI,[["#B3261E","Crimson"],["#5A0E14","Dark red"],["#2A2324","Black"]],[
-  "It is an Apex form that leads a Rampage.","Its talons carry poison.","It is an Apex of the King of the Skies."]),
- M("Apex Rathian","Flying Wyvern","Fire",RI,[["#5F7A3A","Moss green"],["#A01E24","Red"],["#4A3A2A","Dark brown"]],[
-  "It is an Apex form that leads a Rampage.","It favours a backflip with a poisoned tail.","It is an Apex of the Queen of the Land."]),
- M("Apex Zinogre","Fanged Wyvern","Thunder",RI,[["#2F5D6E","Teal blue"],["#A01E24","Red"],["#E2C043","Yellow"]],[
-  "It is an Apex form that leads a Rampage.","It charges itself with help from insects.","It is an Apex of the Thunder Wolf Wyvern."]),
- // Fifth generation: Monster Hunter Rise: Sunbreak (2022)
- M("Aurora Somnacanth","Leviathan","Ice",SB,[["#9EC8E6","Pale blue"],["#D88AA0","Pink"],["#ECEAE4","White"]],[
-  "It is an icy subspecies of a mermaid-like leviathan.","It freezes the water around it.","Its frills shimmer like an aurora."]),
- M("Blood Orange Bishaten","Fanged Beast","Blast",SB,[["#E06A2A","Orange"],["#6A3A7A","Purple"],["#D9B03A","Gold"]],[
-  "It is a subspecies that throws explosive fruit.","It hangs from branches by its tail.","It stores fruit in its tail."]),
- M("Espinas","Flying Wyvern","Poison",SB,[["#5E8A3A","Green"],["#6A4E34","Brown"],["#B0302A","Red"]],[
-  "It sleeps deeply until something disturbs it.","Its thorny shell drips with poison.","It first appeared in an online-only game before joining the main series."]),
- M("Flaming Espinas","Flying Wyvern","Fire",SB,[["#A01E24","Crimson"],["#E0802A","Orange"],["#1E1A1A","Black"]],[
-  "It is a fiery subspecies of a thorny, sleepy wyvern.","Its flames burn hotter than its cousin's.","Its thorny shell is tougher than steel."]),
- M("Gaismagorm","Elder Dragon","Dragon",SB,[["#5B3A6E","Purple"],["#8A2A2A","Dark red"],["#1A1A1A","Black"]],[
-  "It is the final story boss of its debut expansion.","It drains energy through parasitic creatures.","It rises from a deep abyss."]),
- M("Garangolm","Fanged Beast","Fire",SB,[["#5E7A4A","Moss green"],["#6A4E34","Brown"],["#C0402A","Red"]],[
-  "It is a huge, gorilla-like beast covered in moss.","Its fists can switch between fire and stone.","It is one of the Three Lords of its expansion."]),
- M("Lucent Nargacuga","Flying Wyvern","None",SB,[["#EEF0F2","White"],["#24345A","Dark blue"],["#C0242A","Red"]],[
-  "It is a pale subspecies of a panther-like wyvern.","It can turn almost invisible.","It fires spikes from its tail."]),
- M("Lunagaron","Fanged Wyvern","Ice",SB,[["#3E5E9A","Blue"],["#7A7E86","Grey"],["#ECEAE4","White"]],[
-  "It is a werewolf-like wyvern.","It stands on its hind legs when it gets serious.","It is one of the Three Lords of its expansion."]),
- M("Magma Almudron","Leviathan","Fire",SB,[["#C0402A","Red"],["#1E1A1A","Black"],["#D9B03A","Gold"]],[
-  "It is a subspecies that controls magma instead of mud.","It sinks into magma to ambush prey.","It looks like a giant catfish with legs."]),
- M("Primordial Malzeno","Elder Dragon","Dragon",SB,[["#A01E24","Crimson"],["#C4C8CE","Silver"],["#5A0E14","Dark red"]],[
-  "It is an ancient variant of a vampire-like dragon.","It drains life force from its prey.","It was added after its expansion launched."]),
- M("Pyre Rakna-Kadaki","Temnoceran","Fire",SB,[["#E0602A","Orange"],["#ECEAE4","White"],["#1E1A1A","Black"]],[
-  "It is a hotter subspecies of a queen spider.","Its silk burns with fierce flame.","It carries its young on its back."]),
- M("Risen Chameleos","Elder Dragon","Poison",SB,[["#6E4A8A","Violet"],["#E04A2A","Red"],["#B9A0CF","Lilac"]],[
-  "It is a Risen form with a strange red glow.","It can turn invisible.","It steals items with its long tongue."]),
- M("Risen Kushala Daora","Elder Dragon","Wind",SB,[["#8C9196","Steel grey"],["#E04A2A","Red"],["#4A4E52","Gunmetal"]],[
-  "It is a Risen form with a strange red glow.","Its metal hide sheds and rusts.","It wraps itself in a barrier of wind."]),
- M("Risen Teostra","Elder Dragon","Fire",SB,[["#C2451E","Red orange"],["#E04A2A","Red"],["#D9A836","Gold"]],[
-  "It is a Risen form with a strange red glow.","It scatters explosive powder.","Its face and mane recall a lion."]),
- M("Risen Shagaru Magala","Elder Dragon","Frenzy virus",SB,[["#D9C27A","Pale gold"],["#E04A2A","Red"],["#F0ECE2","White"]],[
-  "It is a Risen form with a strange red glow.","It is the adult form of an eyeless virus spreader.","It fires orbs of energy that burst on impact."]),
- M("Risen Crimson Glow Valstrax","Elder Dragon","Dragon",SB,[["#B02030","Crimson"],["#E04A2A","Red"],["#C4C8CE","Silver"]],[
-  "It is a Risen form with a strange red glow.","Its wings work like jet engines.","People once mistook it for a red comet."])
-];
-
-const WI = "Monster Hunter Wilds (2025)", WA = "Monster Hunter Wilds: Ascendance (2027)";
-const BATCH_G6 = [
- // Missing from earlier batches
- M("King Shakalaka","Lynian","None","Monster Hunter 2 (2006)",[["#7A5A3A","Brown"],["#5E8A3A","Green"],["#C0402A","Red"]],[
-  "It is the king of a tribe of small masked Lynians.","It is much larger than the rest of its tribe.","It hides its face behind a big wooden mask."]),
- M("Scorned Magnamalo","Fanged Wyvern","Hellfire",SB,[["#4A2E5E","Dark purple"],["#E04A2A","Red"],["#1A1A1A","Black"]],[
-  "It is a variant overrun by parasitic creatures.","Its ghostly flame mixes with a strange red energy.","Its look draws on armoured samurai."]),
- M("Violet Mizutsune","Leviathan","Water",SB,[["#6E4A8A","Violet"],["#EDE9E2","White"],["#D9B03A","Gold"]],[
-  "It is a violet subspecies of a bubble-making, fox-like leviathan.","It produces bubbles from its fur.","Its bubbles can leave hunters slipping and sliding."]),
- // Sixth generation: Monster Hunter Wilds (2025)
- M("Ajarakan","Fanged Beast","Fire",WI,[["#1A1A1A","Black"],["#E0702A","Orange"],["#A0302A","Red"]],[
-  "It slams the ground with burning fists.","It fights turf wars with the apex of the Oilwell Basin.","Its body heats up as it fights."]),
- M("Balahara","Leviathan","Water",WI,[["#CDB27E","Sand"],["#5E7A9A","Dusty blue"],["#8A6A4A","Brown"]],[
-  "It swims through sand using its fins.","It looks like a giant sandworm.","It lives in the Windward Plains."]),
- M("Chatacabra","Amphibian","None",WI,[["#6E7A5A","Grey green"],["#7A5A3A","Brown"],["#E8DCC6","Cream"]],[
-  "It looks like a cross between a bullfrog and a gorilla.","It catches prey with a sticky tongue.","It is one of the first monsters in its debut game."]),
- M("Doshaguma","Fanged Beast","None",WI,[["#6A4E34","Brown"],["#E8DCC6","Cream"],["#1A1A1A","Black"]],[
-  "It looks like a mix of a lion and a bear.","It roams in packs led by an alpha.","Its packs can overwhelm a whole area."]),
- M("Hirabami","Leviathan","Ice",WI,[["#6A4A9A","Purple"],["#ECEAE4","White"],["#3E7A7A","Teal"]],[
-  "It floats through the air in groups.","It lives in the Iceshard Cliffs.","It hangs upside down from cliffs."]),
- M("Lala Barina","Temnoceran","Paralysis",WI,[["#B01E2A","Scarlet"],["#D88AA0","Pink"],["#1A1A1A","Black"]],[
-  "It looks like a giant rose.","It lives in the Scarlet Forest.","It scatters petals that can paralyse."]),
- M("Quematrice","Brute Wyvern","Fire",WI,[["#C0402A","Red"],["#E0802A","Orange"],["#6A4E34","Brown"]],[
-  "It sets the ground alight with fluid from its tail.","Its crest flares when it is angry.","It looks like a cockatrice from legend."]),
- M("Rompopolo","Brute Wyvern","Poison",WI,[["#6A3A7A","Purple"],["#2F8A8A","Teal"],["#C02A8A","Magenta"]],[
-  "Its body is full of toxic gas.","It lives in the Oilwell Basin.","It has a long, needle-like beak."]),
- M("Xu Wu","Cephalopod","None",WI,[["#ECEAE4","White"],["#6E4A8A","Purple"],["#1A1A1A","Black"]],[
-  "It is a squid-like monster that lurks in ancient ruins.","It ambushes prey from the shadows.","It lives in Wyveria."]),
- M("Guardian Arkveld","Construct","Dragon",WI,[["#EEEAE2","White"],["#8A4AC0","Purple"],["#6E7278","Steel grey"]],[
-  "It is an artificial creature built with an extinct monster's power.","It cannot reproduce and lives on Wyvern Milk.","It absorbs energy through the chainblades on its wings."]),
- M("Guardian Doshaguma","Construct","None",WI,[["#EEEAE2","White"],["#8A4AC0","Purple"],["#7A7E86","Grey"]],[
-  "It is an artificial version of a lion-bear beast.","Purple veins glow across its white fur.","It guards the Ruins of Wyveria."]),
- M("Guardian Ebony Odogaron","Construct","Dragon",WI,[["#EEEAE2","White"],["#8A4AC0","Purple"],["#1A1A1A","Black"]],[
-  "It is an artificial version of a dark, bleeding-claw hunter.","Purple veins glow across its body.","It guards the Ruins of Wyveria."]),
- M("Guardian Fulgur Anjanath","Construct","Thunder",WI,[["#EEEAE2","White"],["#8A4AC0","Purple"],["#5E9CE0","Bright blue"]],[
-  "It is an artificial version of a lightning-breathing brute.","Purple veins glow across its body.","It guards the Ruins of Wyveria."]),
- M("Guardian Rathalos","Construct","Fire",WI,[["#EEEAE2","White"],["#8A4AC0","Purple"],["#B3261E","Crimson"]],[
-  "It is an artificial version of the King of the Skies.","Purple veins glow across its body.","It guards the Ruins of Wyveria."]),
- M("Zoh Shia","Construct","None",WI,null,[
-  "It is the final boss of its debut game's story.","It guards the ruins of an ancient civilisation.","Its white crystal shell breaks away to reveal a black body beneath."]),
- M("Omega Planetes","Unknown","None",WI,[["#6E747C","Steel grey"],["#B0302A","Red"],["#1A1A1A","Black"]],[
-  "It came from a famous online fantasy role-playing game.","It is a giant war machine.","Hunters fight it in a special collaboration quest."]),
- // Sixth generation: Monster Hunter Wilds: Ascendance (2027)
- M("Araketa","Bird Wyvern","None",WA,[["#D8C7A0","Beige"],["#3E8A8A","Teal"],["#E0802A","Orange"]],[
-  "Its Japanese alias means Jetstream Wyvern.","Orange sacs in its wings blast out air, letting it fly like a rocket.","It hunts in packs led by a blue-shelled alpha."]),
- M("Gundoraja","Elder Dragon","Unknown",WA,null,[
-  "Its Japanese alias means Thunderclap Dragon.","It was revealed for an expansion due in 2027.","Its expansion's story focuses on Elder Dragons."])
-];
-
-MORE.push(...BATCH_G12, ...BATCH_G3, ...BATCH_G4, ...BATCH_G5, ...BATCH_G6);
-MORE.forEach(m=>{ if(m.p) PAL[m.n] = m.p; MONSTERS.push(m); });
-
-// Combine all monster lists into the main pool
-const ALL_MONSTERS = MONSTERS;
-
-// Initialize application data structures and UI state
-let pool = [...ALL_MONSTERS];
-let currentRun = null;
-let stats = JSON.parse(localStorage.getItem('tm_stats') || '{}');
-let reports = JSON.parse(localStorage.getItem('tm_reports') || '[]');
-
-// Populate generation checkboxes on the setup screen
-const gensContainer = document.getElementById('gens');
+// UI Generation & Question Options
 const generations = [
-  { id: 'g1', name: '1st Generation', desc: 'Monster Hunter (2004) - Freedom' },
-  { id: 'g2', name: '2nd Generation', desc: 'Monster Hunter 2 - Freedom Unite' },
-  { id: 'g3', name: '3rd Generation', desc: 'Monster Hunter Tri - 3 Ultimate' },
-  { id: 'g4', name: '4th Generation', desc: 'Monster Hunter 4 - Generations Ultimate' },
-  { id: 'g5', name: '5th Generation', desc: 'Monster Hunter: World - Rise: Sunbreak' },
-  { id: 'g6', name: '6th Generation', desc: 'Monster Hunter Wilds (2025)' }
+  { id: '1st Generation', name: '1st Generation', desc: 'Monster Hunter - Freedom' },
+  { id: '2nd Generation', name: '2nd Generation', desc: 'Monster Hunter 2 - Freedom Unite' },
+  { id: '3rd Generation', name: '3rd Generation', desc: 'Monster Hunter Tri - 3 Ultimate' },
+  { id: '4th Generation', name: '4th Generation', desc: 'Monster Hunter 4 - Generations' },
+  { id: '5th Generation', name: '5th Generation', desc: 'Monster Hunter World & Rise' },
+  { id: '6th Generation', name: '6th Generation', desc: 'Monster Hunter Wilds' }
 ];
 
+const qtypes = [
+  { id: 'qt_name', name: 'Name the Monster', desc: 'Identify monster from clues.' },
+  { id: 'qt_class', name: 'Classification', desc: 'Identify monster type.' },
+  { id: 'qt_element', name: 'Element / Ailment', desc: 'Identify primary element.' }
+];
+
+const gensContainer = document.getElementById('gens');
 generations.forEach(g => {
   const label = document.createElement('label');
   label.className = 'gen';
@@ -1013,15 +256,7 @@ generations.forEach(g => {
   gensContainer.appendChild(label);
 });
 
-// Populate question types
 const qtypesContainer = document.getElementById('qtypes');
-const qtypes = [
-  { id: 'qt_name', name: 'Name the Monster', desc: 'Identify monster from clues.' },
-  { id: 'qt_class', name: 'Classification', desc: 'Identify monster type (Flying Wyvern, etc.).' },
-  { id: 'qt_element', name: 'Element / Ailment', desc: 'Identify primary element or status.' },
-  { id: 'qt_gen', name: 'Debut Generation', desc: 'Identify game or generation of origin.' }
-];
-
 qtypes.forEach(qt => {
   const label = document.createElement('label');
   label.className = 'gen';
@@ -1029,10 +264,158 @@ qtypes.forEach(qt => {
   qtypesContainer.appendChild(label);
 });
 
-// Setup button bindings and core flow handler placeholders
+// Game state
+let currentQuestions = [];
+let currentIndex = 0;
+let score = 0;
+let lives = 3;
+let currentClueCount = 1;
+let mode = 'std';
+
 document.getElementById('startBtn').addEventListener('click', () => {
+  const selectedGens = Array.from(document.querySelectorAll('input[name="gen"]:checked')).map(cb => cb.value);
+  if(selectedGens.length === 0) {
+    alert("Please select at least one generation!");
+    return;
+  }
+  
+  mode = document.querySelector('input[name="mode"]:checked').value;
+  const filteredMonsters = MONSTERS.filter(m => selectedGens.includes(m.d));
+  
+  if(filteredMonsters.length < 4) {
+    alert("Selected generations contain fewer than 4 monsters. Please select more generations.");
+    return;
+  }
+
+  currentQuestions = [...filteredMonsters].sort(() => Math.random() - 0.5);
+  if(mode === 'std') currentQuestions = currentQuestions.slice(0, 10);
+
+  currentIndex = 0;
+  score = 0;
+  lives = 3;
+  
   document.getElementById('setup').hidden = true;
   document.getElementById('game').hidden = false;
+  document.getElementById('end').hidden = true;
+  document.getElementById('livesWrap').hidden = (mode !== 'endless');
+  document.getElementById('ofTotal').hidden = (mode === 'endless');
+  
+  loadQuestion();
+});
+
+function loadQuestion() {
+  document.getElementById('verdict').textContent = '';
+  document.getElementById('next').hidden = true;
+  document.getElementById('reveal').disabled = false;
+  
+  currentClueCount = parseInt(document.getElementById('setClues').value, 10);
+  const target = currentQuestions[currentIndex];
+  
+  document.getElementById('round').textContent = currentIndex + 1;
+  document.getElementById('total').textContent = currentQuestions.length;
+  document.getElementById('score').textContent = score;
+  document.getElementById('lives').textContent = lives;
+
+  renderClues(target);
+  renderChoices(target);
+}
+
+function renderClues(target) {
+  const list = document.getElementById('clues');
+  list.innerHTML = '';
+
+  for(let i = 0; i < currentClueCount && i < target.t.length; i++) {
+    const li = document.createElement('li');
+    li.innerHTML = `<span class="k">Note ${i+1}</span><span>${target.t[i]}</span>`;
+    list.appendChild(li);
+  }
+
+  if(PAL[target.n] && currentClueCount >= 2) {
+    const li = document.createElement('li');
+    let colorHtml = `<span class="k">Colours</span><div class="sw">`;
+    PAL[target.n].forEach(c => {
+      colorHtml += `<div class="chip"><i style="background:${c[0]}"></i><small>${c[1]}</small></div>`;
+    });
+    colorHtml += `</div>`;
+    li.innerHTML = colorHtml;
+    list.appendChild(li);
+  }
+}
+
+document.getElementById('reveal').addEventListener('click', () => {
+  const target = currentQuestions[currentIndex];
+  if(currentClueCount < target.t.length + 1) {
+    currentClueCount++;
+    score = Math.max(0, score - 1);
+    document.getElementById('score').textContent = score;
+    renderClues(target);
+  } else {
+    document.getElementById('reveal').disabled = true;
+  }
+});
+
+function renderChoices(target) {
+  const choicesContainer = document.getElementById('choices');
+  choicesContainer.innerHTML = '';
+
+  let wrongOptions = MONSTERS.filter(m => m.n !== target.n).map(m => m.n);
+  wrongOptions = wrongOptions.sort(() => Math.random() - 0.5).slice(0, 3);
+  
+  const allChoices = [target.n, ...wrongOptions].sort(() => Math.random() - 0.5);
+
+  allChoices.forEach(choiceText => {
+    const btn = document.createElement('button');
+    btn.className = 'choice';
+    btn.textContent = choiceText;
+    btn.addEventListener('click', () => handleAnswer(choiceText, target.n, btn));
+    choicesContainer.appendChild(btn);
+  });
+}
+
+function handleAnswer(selected, correct, btn) {
+  const allBtns = document.querySelectorAll('.choice');
+  allBtns.forEach(b => b.disabled = true);
+
+  if(selected === correct) {
+    btn.classList.add('right');
+    document.getElementById('verdict').className = 'verdict good';
+    document.getElementById('verdict').textContent = 'Correct tracking!';
+    score += Math.max(1, 5 - currentClueCount);
+  } else {
+    btn.classList.add('wrong');
+    document.getElementById('verdict').className = 'verdict bad';
+    document.getElementById('verdict').textContent = `Wrong! The monster was ${correct}.`;
+    allBtns.forEach(b => { if(b.textContent === correct) b.classList.add('right'); });
+    lives--;
+  }
+
+  document.getElementById('score').textContent = score;
+  document.getElementById('lives').textContent = lives;
+  document.getElementById('next').hidden = false;
+}
+
+document.getElementById('next').addEventListener('click', () => {
+  if(mode === 'endless' && lives <= 0) {
+    endGame();
+    return;
+  }
+  
+  currentIndex++;
+  if(currentIndex < currentQuestions.length) {
+    loadQuestion();
+  } else {
+    endGame();
+  }
+});
+
+function endGame() {
+  document.getElementById('game').hidden = true;
+  document.getElementById('end').hidden = false;
+  document.getElementById('final').textContent = score;
+}
+
+document.getElementById('again').addEventListener('click', () => {
+  document.getElementById('startBtn').click();
 });
 
 document.getElementById('toMenu').addEventListener('click', () => {
@@ -1040,7 +423,10 @@ document.getElementById('toMenu').addEventListener('click', () => {
   document.getElementById('setup').hidden = false;
 });
 
-console.log("Track the Monster app successfully loaded with", ALL_MONSTERS.length, "monsters!");
+document.getElementById('change').addEventListener('click', () => {
+  document.getElementById('end').hidden = true;
+  document.getElementById('setup').hidden = false;
+});
 </script>
 </body>
 </html>
